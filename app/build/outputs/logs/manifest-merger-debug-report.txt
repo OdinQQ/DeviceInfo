@@ -1,223 +1,215 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:2:1-58:12
-MERGED from [com.android.support:design:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/10eedd76d53d090f7162e721863c382a/AndroidManifest.xml:17:1-31:12
-MERGED from [com.airbnb.android:lottie:2.5.0-beta3] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/lottie-2.5.0-beta3.aar/222ff5b5699ca3923c8a7dc7829c490f/AndroidManifest.xml:2:1-14:12
-MERGED from [com.android.support:appcompat-v7:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/c556d3a166724ad40555b65552a7bfb4/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/374aa752ccf043f7efcf15679764c242/AndroidManifest.xml:2:1-11:12
-MERGED from [com.android.support:transition:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/a19b52dd99f3f7e61c73bf6251d1de7b/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-v4:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c09744b1d7a6a81620fa8776362ecd22/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:cardview-v7:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/c527c0004b1f73dbc16e2a5289f065de/AndroidManifest.xml:17:1-28:12
-MERGED from [com.jakewharton:butterknife:8.8.1] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/62831a234fd17053251ad0aaadb43e75/AndroidManifest.xml:2:1-7:12
-MERGED from [com.github.lzyzsd:circleprogress:1.2.1] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/circleprogress-1.2.1.aar/63ceb3a125e1e5706e6ab01fc85dd4fc/AndroidManifest.xml:2:1-12:12
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/9f170119941c60b041bbf156dbaab0fb/AndroidManifest.xml:17:1-28:12
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/cf5c6d983eefd815838fc36f5007066b/AndroidManifest.xml:17:1-31:12
-MERGED from [com.android.support:support-fragment:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/f30ee96004603d947a35f0c31b9b0f40/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-utils:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/7c1569ac4fc7a7e5a8753791bbc8281f/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/ea113d00556ae40b9e4761f428f2caaa/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/14c4e64bec48e5de962eb10afa51537b/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-core-ui:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/5f4d99a730b2be7e27d9f73c666e8429/AndroidManifest.xml:17:1-22:12
-MERGED from [com.android.support:support-compat:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/3c6cfeb37becb0ba1b41880d47cf758a/AndroidManifest.xml:17:1-22:12
-MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/4802c8f66e0f3a1477c023133c0c2ae3/AndroidManifest.xml:17:1-24:12
-INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:2:1-58:12
-INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:2:1-58:12
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:2:1-73:12
+INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:2:1-73:12
+INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:2:1-73:12
+INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:2:1-73:12
+MERGED from [com.android.support:design:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\207d8abf2435c1239fb45ef546980ae5\design-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.airbnb.android:lottie:2.5.0-rc1] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\d1f5bffe0d77df0c3ad90626288e3de1\lottie-2.5.0-rc1\AndroidManifest.xml:2:1-14:12
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\d12d024b85baf943f04c13cf66daba02\appcompat-v7-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\8101c104a4bb88890082dac97f1905df\constraint-layout-1.0.2\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\48d3bf3df99baa2ca06fb0a90de2eb4a\support-v4-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\f2e44cedd66723d5035a2b97860b4137\cardview-v7-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\13039ff201df419af3c0c0567064c6a6\butterknife-8.8.1\AndroidManifest.xml:2:1-7:12
+MERGED from [com.github.lzyzsd:circleprogress:1.2.1] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\490a4535baaf4579b1cf2cf586db8338\circleprogress-1.2.1\AndroidManifest.xml:2:1-12:12
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\e4f09f6015df3694c619f6e0c0bc8d6f\support-fragment-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\5f749882fd36f68d787072969247c6f4\support-core-utils-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\ab0d5d1796d985abf25e5d1aafc341ae\animated-vector-drawable-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\4f61cdb06b2d5f516dbf82c98085091d\support-vector-drawable-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:recyclerview-v7:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\0e906c1b49741fc3129b7987e7d7f36b\recyclerview-v7-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:transition:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\0a136938e4157a567e38cd1c3f8e3d0b\transition-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\873706e54c88ed1b86ef07bf6861e50c\support-media-compat-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\6131d3ebeb678eca17385bf53b12a4c7\support-core-ui-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\c268951a861f7ffe54c9175abf2d12f4\support-compat-27.0.2\AndroidManifest.xml:17:1-22:12
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\e1ef950a82287ba976b0516f80934a11\runtime-1.0.3\AndroidManifest.xml:17:1-24:12
+INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:2:1-73:12
+INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:2:1-73:12
+INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:2:1-73:12
 	package
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:3:5-41
-		INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
-		INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:3:5-41
+		INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
+		INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
 	android:versionName
-		INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:2:1-58:12
-		INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
+		INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:2:1-73:12
+		INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
 	android:versionCode
-		INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:2:1-58:12
-		INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
+		INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:2:1-73:12
+		INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
 	xmlns:android
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:2:11-69
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:5:5-67
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:5:5-67
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:5:22-64
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:5:22-64
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:6:5-79
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:6:5-79
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:6:22-76
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:6:22-76
 uses-permission#android.permission.ACCESS_WIFI_STATE
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:7:5-76
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:7:5-76
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:7:22-73
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:7:22-73
 uses-permission#android.permission.CAMERA
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:8:5-65
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:8:5-65
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:8:22-62
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:8:22-62
 uses-permission#android.permission.CALL_PHONE
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:9:5-69
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:9:5-69
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:9:22-66
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:9:22-66
 uses-permission#android.permission.READ_PHONE_STATE
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:10:5-75
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:10:5-75
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:10:22-72
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:10:22-72
 uses-permission#android.permission.BLUETOOTH
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:11:5-67
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:11:5-68
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:11:22-65
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:11:22-65
 uses-feature#android.hardware.sensor.proximity
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:13:5-15:36
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:13:5-15:36
 	android:required
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:15:9-33
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:15:9-33
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:14:9-57
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:14:9-57
 uses-feature#android.hardware.sensor.gyroscope
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:16:5-18:36
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:16:5-18:36
 	android:required
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:18:9-33
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:18:9-33
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:17:9-57
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:17:9-57
 uses-feature#android.hardware.wifi
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:20:5-22:36
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:20:5-22:36
 	android:required
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:22:9-33
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:22:9-33
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:21:9-45
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:21:9-45
 uses-feature#android.hardware.camera
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:24:5-60
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:24:5-60
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:24:19-57
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:24:19-57
 supports-screens
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:26:5-30:39
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:26:5-30:39
 	android:largeScreens
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:27:9-36
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:27:9-36
 	android:smallScreens
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:30:9-36
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:30:9-36
 	android:normalScreens
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:28:9-37
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:28:9-37
 	android:resizeable
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:29:9-34
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:29:9-34
 application
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:32:5-56:19
-MERGED from [com.android.support:design:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/10eedd76d53d090f7162e721863c382a/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:design:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/10eedd76d53d090f7162e721863c382a/AndroidManifest.xml:25:5-29:19
-MERGED from [com.airbnb.android:lottie:2.5.0-beta3] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/lottie-2.5.0-beta3.aar/222ff5b5699ca3923c8a7dc7829c490f/AndroidManifest.xml:12:5-20
-MERGED from [com.airbnb.android:lottie:2.5.0-beta3] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/lottie-2.5.0-beta3.aar/222ff5b5699ca3923c8a7dc7829c490f/AndroidManifest.xml:12:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/374aa752ccf043f7efcf15679764c242/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/374aa752ccf043f7efcf15679764c242/AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:transition:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/a19b52dd99f3f7e61c73bf6251d1de7b/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:transition:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/a19b52dd99f3f7e61c73bf6251d1de7b/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-v4:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c09744b1d7a6a81620fa8776362ecd22/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-v4:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c09744b1d7a6a81620fa8776362ecd22/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:cardview-v7:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/c527c0004b1f73dbc16e2a5289f065de/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:cardview-v7:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/c527c0004b1f73dbc16e2a5289f065de/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/9f170119941c60b041bbf156dbaab0fb/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/9f170119941c60b041bbf156dbaab0fb/AndroidManifest.xml:22:5-26:19
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/cf5c6d983eefd815838fc36f5007066b/AndroidManifest.xml:25:5-29:19
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/cf5c6d983eefd815838fc36f5007066b/AndroidManifest.xml:25:5-29:19
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:32:5-71:19
+MERGED from [com.airbnb.android:lottie:2.5.0-rc1] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\d1f5bffe0d77df0c3ad90626288e3de1\lottie-2.5.0-rc1\AndroidManifest.xml:12:5-20
+MERGED from [com.airbnb.android:lottie:2.5.0-rc1] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\d1f5bffe0d77df0c3ad90626288e3de1\lottie-2.5.0-rc1\AndroidManifest.xml:12:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\8101c104a4bb88890082dac97f1905df\constraint-layout-1.0.2\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\8101c104a4bb88890082dac97f1905df\constraint-layout-1.0.2\AndroidManifest.xml:9:5-20
 	android:supportsRtl
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:37:9-35
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:38:9-35
 	android:label
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:35:9-41
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:36:9-41
 	android:roundIcon
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:36:9-48
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:37:9-48
 	android:icon
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:34:9-43
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:35:9-43
 	android:allowBackup
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:33:9-35
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:34:9-35
 	android:theme
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:38:9-40
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:39:9-40
+	android:name
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:33:9-38
 activity#com.quixom.apps.deviceinfo.MainActivity
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:39:9-41:52
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:40:9-42:52
 	android:screenOrientation
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:41:13-49
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:42:13-49
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:40:13-41
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:41:13-41
 activity#com.quixom.apps.deviceinfo.Splash
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:43:9-54:20
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:44:9-55:20
 	android:screenOrientation
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:45:13-49
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:46:13-49
 	android:theme
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:46:13-47
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:47:13-47
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:44:13-35
-intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:48:13-52:29
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:45:13-35
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:49:13-53:29
 action#android.intent.action.MAIN
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:49:17-69
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:50:17-69
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:49:25-66
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:50:25-66
 category#android.intent.category.LAUNCHER
-ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:51:17-77
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:52:17-77
 	android:name
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml:51:27-74
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:52:27-74
+receiver#com.quixom.apps.deviceinfo.Widget.MyWidgetProvider
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:57:9-66:20
+	android:name
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:57:19-58
+intent-filter#action:name:android.appwidget.action.APPWIDGET_UPDATE
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:58:13-61:29
+action#android.appwidget.action.APPWIDGET_UPDATE
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:59:17-60:80
+	android:name
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:60:21-77
+meta-data#android.appwidget.provider
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:63:13-65:55
+	android:resource
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:65:17-52
+	android:name
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:64:17-58
+service#com.quixom.apps.deviceinfo.service.AppWidgetService
+ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:68:9-61
+	android:name
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml:68:18-58
 uses-sdk
-INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
-INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
-MERGED from [com.android.support:design:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/10eedd76d53d090f7162e721863c382a/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:design:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/10eedd76d53d090f7162e721863c382a/AndroidManifest.xml:21:5-23:62
-MERGED from [com.airbnb.android:lottie:2.5.0-beta3] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/lottie-2.5.0-beta3.aar/222ff5b5699ca3923c8a7dc7829c490f/AndroidManifest.xml:8:5-10:41
-MERGED from [com.airbnb.android:lottie:2.5.0-beta3] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/lottie-2.5.0-beta3.aar/222ff5b5699ca3923c8a7dc7829c490f/AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.support:appcompat-v7:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/c556d3a166724ad40555b65552a7bfb4/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:appcompat-v7:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/appcompat-v7-27.0.2.aar/c556d3a166724ad40555b65552a7bfb4/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/374aa752ccf043f7efcf15679764c242/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/constraint-layout-1.0.2.aar/374aa752ccf043f7efcf15679764c242/AndroidManifest.xml:5:5-7:41
-MERGED from [com.android.support:transition:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/a19b52dd99f3f7e61c73bf6251d1de7b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:transition:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/a19b52dd99f3f7e61c73bf6251d1de7b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c09744b1d7a6a81620fa8776362ecd22/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-v4:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c09744b1d7a6a81620fa8776362ecd22/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:cardview-v7:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/c527c0004b1f73dbc16e2a5289f065de/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:cardview-v7:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/c527c0004b1f73dbc16e2a5289f065de/AndroidManifest.xml:20:5-44
-MERGED from [com.jakewharton:butterknife:8.8.1] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/62831a234fd17053251ad0aaadb43e75/AndroidManifest.xml:5:5-43
-MERGED from [com.jakewharton:butterknife:8.8.1] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/butterknife-8.8.1.aar/62831a234fd17053251ad0aaadb43e75/AndroidManifest.xml:5:5-43
-MERGED from [com.github.lzyzsd:circleprogress:1.2.1] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/circleprogress-1.2.1.aar/63ceb3a125e1e5706e6ab01fc85dd4fc/AndroidManifest.xml:8:5-10:41
-MERGED from [com.github.lzyzsd:circleprogress:1.2.1] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/circleprogress-1.2.1.aar/63ceb3a125e1e5706e6ab01fc85dd4fc/AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/9f170119941c60b041bbf156dbaab0fb/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/9f170119941c60b041bbf156dbaab0fb/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/cf5c6d983eefd815838fc36f5007066b/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/cf5c6d983eefd815838fc36f5007066b/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-fragment:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/f30ee96004603d947a35f0c31b9b0f40/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-fragment:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-fragment-27.0.2.aar/f30ee96004603d947a35f0c31b9b0f40/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/7c1569ac4fc7a7e5a8753791bbc8281f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-utils:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-core-utils-27.0.2.aar/7c1569ac4fc7a7e5a8753791bbc8281f/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/ea113d00556ae40b9e4761f428f2caaa/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:animated-vector-drawable:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/animated-vector-drawable-27.0.2.aar/ea113d00556ae40b9e4761f428f2caaa/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/14c4e64bec48e5de962eb10afa51537b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-vector-drawable-27.0.2.aar/14c4e64bec48e5de962eb10afa51537b/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/5f4d99a730b2be7e27d9f73c666e8429/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-core-ui:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-core-ui-27.0.2.aar/5f4d99a730b2be7e27d9f73c666e8429/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/3c6cfeb37becb0ba1b41880d47cf758a/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-compat:27.0.2] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-compat-27.0.2.aar/3c6cfeb37becb0ba1b41880d47cf758a/AndroidManifest.xml:20:5-44
-MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/4802c8f66e0f3a1477c023133c0c2ae3/AndroidManifest.xml:20:5-22:41
-MERGED from [android.arch.lifecycle:runtime:1.0.3] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/runtime-1.0.3.aar/4802c8f66e0f3a1477c023133c0c2ae3/AndroidManifest.xml:20:5-22:41
-INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
-INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
-	tools:overrideLibrary
-		ADDED from [com.android.support:design:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/10eedd76d53d090f7162e721863c382a/AndroidManifest.xml:23:9-59
+INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
+INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:design:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\207d8abf2435c1239fb45ef546980ae5\design-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:design:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\207d8abf2435c1239fb45ef546980ae5\design-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.airbnb.android:lottie:2.5.0-rc1] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\d1f5bffe0d77df0c3ad90626288e3de1\lottie-2.5.0-rc1\AndroidManifest.xml:8:5-10:41
+MERGED from [com.airbnb.android:lottie:2.5.0-rc1] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\d1f5bffe0d77df0c3ad90626288e3de1\lottie-2.5.0-rc1\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\d12d024b85baf943f04c13cf66daba02\appcompat-v7-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:appcompat-v7:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\d12d024b85baf943f04c13cf66daba02\appcompat-v7-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\8101c104a4bb88890082dac97f1905df\constraint-layout-1.0.2\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\8101c104a4bb88890082dac97f1905df\constraint-layout-1.0.2\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\48d3bf3df99baa2ca06fb0a90de2eb4a\support-v4-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\48d3bf3df99baa2ca06fb0a90de2eb4a\support-v4-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\f2e44cedd66723d5035a2b97860b4137\cardview-v7-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:cardview-v7:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\f2e44cedd66723d5035a2b97860b4137\cardview-v7-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\13039ff201df419af3c0c0567064c6a6\butterknife-8.8.1\AndroidManifest.xml:5:5-43
+MERGED from [com.jakewharton:butterknife:8.8.1] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\13039ff201df419af3c0c0567064c6a6\butterknife-8.8.1\AndroidManifest.xml:5:5-43
+MERGED from [com.github.lzyzsd:circleprogress:1.2.1] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\490a4535baaf4579b1cf2cf586db8338\circleprogress-1.2.1\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.lzyzsd:circleprogress:1.2.1] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\490a4535baaf4579b1cf2cf586db8338\circleprogress-1.2.1\AndroidManifest.xml:8:5-10:41
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\e4f09f6015df3694c619f6e0c0bc8d6f\support-fragment-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-fragment:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\e4f09f6015df3694c619f6e0c0bc8d6f\support-fragment-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\5f749882fd36f68d787072969247c6f4\support-core-utils-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-utils:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\5f749882fd36f68d787072969247c6f4\support-core-utils-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\ab0d5d1796d985abf25e5d1aafc341ae\animated-vector-drawable-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\ab0d5d1796d985abf25e5d1aafc341ae\animated-vector-drawable-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\4f61cdb06b2d5f516dbf82c98085091d\support-vector-drawable-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\4f61cdb06b2d5f516dbf82c98085091d\support-vector-drawable-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\0e906c1b49741fc3129b7987e7d7f36b\recyclerview-v7-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:recyclerview-v7:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\0e906c1b49741fc3129b7987e7d7f36b\recyclerview-v7-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\0a136938e4157a567e38cd1c3f8e3d0b\transition-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\0a136938e4157a567e38cd1c3f8e3d0b\transition-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\873706e54c88ed1b86ef07bf6861e50c\support-media-compat-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-media-compat:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\873706e54c88ed1b86ef07bf6861e50c\support-media-compat-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\6131d3ebeb678eca17385bf53b12a4c7\support-core-ui-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-core-ui:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\6131d3ebeb678eca17385bf53b12a4c7\support-core-ui-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\c268951a861f7ffe54c9175abf2d12f4\support-compat-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-compat:27.0.2] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\c268951a861f7ffe54c9175abf2d12f4\support-compat-27.0.2\AndroidManifest.xml:20:5-44
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\e1ef950a82287ba976b0516f80934a11\runtime-1.0.3\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.3] C:\Users\hxdd-qintj\.gradle\caches\transforms-2\files-2.1\e1ef950a82287ba976b0516f80934a11\runtime-1.0.3\AndroidManifest.xml:20:5-22:41
+INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
+INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
 	android:targetSdkVersion
-		INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
-		INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
+		INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
+		INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
 	android:minSdkVersion
-		INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
-		ADDED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
-		INJECTED from /home/quixomtech/Documents/Android/Android Projects/Android Sensor/DeviceInfo18/app/src/main/AndroidManifest.xml
-meta-data#android.support.VERSION
-ADDED from [com.android.support:design:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/10eedd76d53d090f7162e721863c382a/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:transition:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/a19b52dd99f3f7e61c73bf6251d1de7b/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:transition:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/transition-26.1.0.aar/a19b52dd99f3f7e61c73bf6251d1de7b/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-v4:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c09744b1d7a6a81620fa8776362ecd22/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-v4:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-v4-26.1.0.aar/c09744b1d7a6a81620fa8776362ecd22/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:cardview-v7:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/c527c0004b1f73dbc16e2a5289f065de/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:cardview-v7:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/cardview-v7-26.1.0.aar/c527c0004b1f73dbc16e2a5289f065de/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/9f170119941c60b041bbf156dbaab0fb/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:recyclerview-v7:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/recyclerview-v7-26.1.0.aar/9f170119941c60b041bbf156dbaab0fb/AndroidManifest.xml:23:9-25:38
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/cf5c6d983eefd815838fc36f5007066b/AndroidManifest.xml:26:9-28:38
-MERGED from [com.android.support:support-media-compat:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/cf5c6d983eefd815838fc36f5007066b/AndroidManifest.xml:26:9-28:38
-	android:value
-		ADDED from [com.android.support:design:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/10eedd76d53d090f7162e721863c382a/AndroidManifest.xml:28:13-35
-	android:name
-		ADDED from [com.android.support:design:26.1.0] /home/quixomtech/.gradle/caches/transforms-1/files-1.1/design-26.1.0.aar/10eedd76d53d090f7162e721863c382a/AndroidManifest.xml:27:13-51
+		INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
+		ADDED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml
+		INJECTED from D:\workspace\DeviceInfo\app\src\main\AndroidManifest.xml

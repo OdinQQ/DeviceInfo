@@ -32,6 +32,7 @@ import butterknife.Unbinder;
 public class HomeFragment extends BaseFragment {
 
     Unbinder unbinder;
+    //
     int mode;
     @BindView(R.id.iv_menu)
     ImageView ivMenu;
@@ -128,7 +129,6 @@ public class HomeFragment extends BaseFragment {
         tvModel.setText("".concat(Build.MODEL));
         tvBoard.setText("".concat(Build.BOARD));
         tvHardware.setText("".concat(Build.HARDWARE));
-
         tvSerialNo.setText("".concat(Build.SERIAL));
 
         @SuppressLint("HardwareIds") String androidID = (Settings.Secure.getString(getContext().getContentResolver(), Settings.Secure.ANDROID_ID));

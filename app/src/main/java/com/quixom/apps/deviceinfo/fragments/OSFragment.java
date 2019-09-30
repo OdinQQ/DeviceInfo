@@ -75,18 +75,13 @@ public class OSFragment extends BaseFragment {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(getResources().getColor(R.color.dark_blue));
             window.setNavigationBarColor(getResources().getColor(R.color.dark_blue));
-
         }
-
 /*
         View view = inflater.inflate(R.layout.fragment_os, container, false);
         unbinder = ButterKnife.bind(this, view);
 */
-
         return view;
     }
-
-
 
     public static int fetchPrimaryDarkColor(Resources.Theme context) {
         TypedValue typedValue = new TypedValue();
@@ -95,7 +90,7 @@ public class OSFragment extends BaseFragment {
         a.recycle();
         return color;
     }
-    
+
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
@@ -196,16 +191,27 @@ public class OSFragment extends BaseFragment {
                 tvVersionName.setText(mResources.getString(R.string.nougat).concat(" ".concat(String.valueOf(Build.VERSION.RELEASE))));
                 tvReleaseDate.setText(mResources.getString(R.string.release_date).concat("October 4, 2016"));
                 break;
+
             case 26:
                 tvVersionName.setText(mResources.getString(R.string.oreo).concat(" ".concat(String.valueOf(Build.VERSION.RELEASE))));
                 tvReleaseDate.setText(mResources.getString(R.string.release_date).concat("August 21, 2017"));
                 break;
+
+            case 27:
+                tvVersionName.setText(mResources.getString(R.string.oreo).concat(" ".concat(String.valueOf(Build.VERSION.RELEASE))));
+                tvReleaseDate.setText(mResources.getString(R.string.release_date).concat("December 5, 2017"));
+                break;
+
+            case 28:
+                tvVersionName.setText(mResources.getString(R.string.pie).concat(" ".concat(String.valueOf(Build.VERSION.RELEASE))));
+                tvReleaseDate.setText(mResources.getString(R.string.release_date).concat("August 7, 2018"));
+                break;
+
             default:
                 tvVersionName.setText(mResources.getString(R.string.unknown_version));
                 tvReleaseDate.setText(mResources.getString(R.string.release_date).concat("-"));
                 break;
         }
-
 
 //        deviceInfoList.get(0).setBuildRelease(Build.VERSION.RELEASE);
 //        deviceInfoList.get(0).setDisplay(Build.DISPLAY);

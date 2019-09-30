@@ -50,6 +50,26 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends BaseActivity {
 
+    public static final int NAV_INDEX_DEVICE = 0;
+    public static final int NAV_INDEX_OS = 1;
+    public static final int NAV_INDEX_SENSOR = 2;
+    public static final int NAV_INDEX_CPU = 3;
+    public static final int NAV_INDEX_BATTERY = 4;
+    public static final int NAV_INDEX_NETWORK = 5;
+    public static final int NAV_INDEX_SIM = 6;
+    public static final int NAV_INDEX_CAMERA = 7;
+    public static final int NAV_INDEX_STORAGE = 8;
+    public static final int NAV_INDEX_BLUETOOTH = 9;
+    public static final int NAV_INDEX_DISPLAY = 10;
+    public static final int NAV_INDEX_FEATURES = 11;
+    public static final int NAV_INDEX_USER_APPS = 12;
+    public static final int NAV_INDEX_SYSTEM_APPS = 13;
+    public static final int NAV_INDEX_ABOUT_US = 14;
+    public static final int NAV_INDEX_SHARE = 15;
+    public static final int NAV_INDEX_RATE_US = 16;
+    public static final int NAV_INDEX_FEEDBACK = 17;
+    public static final int NAV_INDEX_CONNECT_US = 18;
+
     @BindView(R.id.fragment_container)
     FrameLayout fragmentContainer;
     @BindView(R.id.navigationView)
@@ -71,7 +91,6 @@ public class MainActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-
         fragmentUtil = new FragmentUtil(MainActivity.this);
 
         // Navigation view header
@@ -121,7 +140,6 @@ public class MainActivity extends BaseActivity {
         navigationView.getMenu().getItem(0).setChecked(true);
         navigationView.setItemIconTintList(null);
 
-
         View headerLayout = navigationView.getHeaderView(0);
         TextView tvDeviceName = headerLayout.findViewById(R.id.tv_device_name);
         TextView tvModelNumber = headerLayout.findViewById(R.id.tv_model_number);
@@ -149,66 +167,65 @@ public class MainActivity extends BaseActivity {
                 switch (menuItem.getItemId()) {
                     //Replacing the main content with ContentFragment Which is our Inbox View;
                     case R.id.nav_device:
-                        navItemIndex = 0;
+                        navItemIndex = NAV_INDEX_DEVICE;
                         break;
                     case R.id.nav_os:
-                        navItemIndex = 1;
+                        navItemIndex = NAV_INDEX_OS;
                         break;
                     case R.id.nav_sensor:
-                        navItemIndex = 2;
+                        navItemIndex = NAV_INDEX_SENSOR;
                         break;
                     case R.id.nav_cpu:
-                        navItemIndex = 3;
+                        navItemIndex = NAV_INDEX_CPU;
                         break;
                     case R.id.nav_battery:
-                        navItemIndex = 4;
+                        navItemIndex = NAV_INDEX_BATTERY;
                         break;
                     case R.id.nav_network:
-                        navItemIndex = 5;
+                        navItemIndex = NAV_INDEX_NETWORK;
                         break;
                     case R.id.nav_sim:
-                        navItemIndex = 6;
+                        navItemIndex = NAV_INDEX_SIM;
                         break;
                     case R.id.nav_camera:
-                        navItemIndex = 7;
+                        navItemIndex = NAV_INDEX_CAMERA;
                         break;
                     case R.id.nav_storage:
-                        navItemIndex = 8;
+                        navItemIndex = NAV_INDEX_STORAGE;
                         break;
                     case R.id.nav_bluetooth:
-                        navItemIndex = 9;
+                        navItemIndex = NAV_INDEX_BLUETOOTH;
                         break;
                     case R.id.nav_display:
-                        navItemIndex = 10;
+                        navItemIndex = NAV_INDEX_DISPLAY;
                         break;
                     case R.id.nav_features:
-                        navItemIndex = 11;
+                        navItemIndex = NAV_INDEX_FEATURES;
                         break;
                     case R.id.nav_user_apps:
-                        navItemIndex = 12;
+                        navItemIndex = NAV_INDEX_USER_APPS;
                         break;
                     case R.id.nav_system_apps:
-                        navItemIndex = 13;
+                        navItemIndex = NAV_INDEX_SYSTEM_APPS;
                         break;
                     case R.id.nav_about_us:
-                        navItemIndex = 14;
+                        navItemIndex = NAV_INDEX_ABOUT_US;
                         break;
                     case R.id.nav_share:
-                        navItemIndex = 15;
+                        navItemIndex = NAV_INDEX_SHARE;
                         break;
                     case R.id.nav_rate_us:
-                        navItemIndex = 16;
+                        navItemIndex = NAV_INDEX_RATE_US;
                         break;
                     case R.id.nav_feedback:
-                        navItemIndex = 17;
+                        navItemIndex = NAV_INDEX_FEEDBACK;
                         break;
                     case R.id.nav_connect_us:
-                        navItemIndex = 18;
+                        navItemIndex = NAV_INDEX_CONNECT_US;
                         break;
                     default:
-                        navItemIndex = 0;
+                        navItemIndex = NAV_INDEX_DEVICE;
                 }
-
                 //Checking if the item is in checked state or not, if not make it in checked state
                 if (menuItem.isChecked()) {
                     menuItem.setChecked(false);
@@ -216,9 +233,7 @@ public class MainActivity extends BaseActivity {
                     menuItem.setChecked(true);
                 }
                 menuItem.setChecked(true);
-
                 loadHomeFragment();
-
                 return true;
             }
         });
@@ -330,45 +345,45 @@ public class MainActivity extends BaseActivity {
      */
     private Fragment getFragmentFromDrawer() {
         switch (navItemIndex) {
-            case 0:
+            case NAV_INDEX_DEVICE:
                 return HomeFragment.getInstance(0);
-            case 1:
+            case NAV_INDEX_OS:
                 return new OSFragment();
-            case 2:
+            case NAV_INDEX_SENSOR:
                 return new SensorCategoryFragment();
-            case 3:
+            case NAV_INDEX_CPU:
                 return new CPUFragment();
-            case 4:
+            case NAV_INDEX_BATTERY:
                 return new BatteryFragment();
-            case 5:
+            case NAV_INDEX_NETWORK:
                 return new NetworkFragment();
-            case 6:
+            case NAV_INDEX_SIM:
                 return new SimFragment();
-            case 7:
+            case NAV_INDEX_CAMERA:
                 return new CameraFragment();
-            case 8:
+            case NAV_INDEX_STORAGE:
                 return new StorageFragment();
-            case 9:
+            case NAV_INDEX_BLUETOOTH:
                 return new BlueToothFragment();
-            case 10:
+            case NAV_INDEX_DISPLAY:
                 return new DisplayFragment();
-            case 11:
+            case NAV_INDEX_FEATURES:
                 return new PhoneFeaturesFragment();
-            case 12:
+            case NAV_INDEX_USER_APPS:
                 return AppsFragment.Companion.getInstance(KeyUtil.IS_USER_COME_FROM_USER_APPS);
-            case 13:
+            case NAV_INDEX_SYSTEM_APPS:
                 return AppsFragment.Companion.getInstance(KeyUtil.IS_USER_COME_FROM_SYSTEM_APPS);
-            case 14:
+            case NAV_INDEX_ABOUT_US:
                 return new AboutUsFragment();
-            case 15:
+            case NAV_INDEX_SHARE:
                 Methods.sharing("https://play.google.com/store/apps/details?id=com.quixom.deviceinfo");
                 break;
-            case 16:
+            case NAV_INDEX_RATE_US:
                 RateUsApp.Companion.rateUsApp(MainActivity.this);
                 break;
-            case 17:
+            case NAV_INDEX_FEEDBACK:
                 return HomeFragment.getInstance(7);
-            case 18:
+            case NAV_INDEX_CONNECT_US:
                 return HomeFragment.getInstance(7);
             case 19:
                 return HomeFragment.getInstance(7);

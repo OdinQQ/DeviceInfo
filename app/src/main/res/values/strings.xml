@@ -8,51 +8,52 @@
     <string name="navigation_drawer_close">Close navigation drawer</string>
 
     <!-- Screens Header & Navigation drawer items -->
-    <string name="device">Device</string>
-    <string name="os">OS</string>
-    <string name="sensor">Sensor</string>
+    <string name="device">设备</string>
+    <string name="os">操作系统</string>
+    <string name="sensor">传感器</string>
     <string name="cpu">CPU</string>
     <string name="gpu">GPU</string>
-    <string name="battery">Battery</string>
-    <string name="network">Network</string>
+    <string name="battery">电池</string>
+    <string name="network">网络</string>
     <string name="sim">SIM</string>
-    <string name="display">Display</string>
-    <string name="camera">Camera</string>
-    <string name="storage">Storage</string>
-    <string name="features">Features</string>
-    <string name="user_apps">User Apps</string>
-    <string name="system_apps">System Apps</string>
-    <string name="about_us">About Us</string>
-    <string name="expanse_the_world">Expanse the World</string>
-    <string name="share">Share</string>
-    <string name="rate_us">Rate Us</string>
-    <string name="feedback">Feedback</string>
-    <string name="connect_us">Connect Us</string>
+    <string name="display">显示</string>
+    <string name="camera">相机</string>
+    <string name="storage">存储</string>
+    <string name="features">特性</string>
+    <string name="user_apps">用户应用</string>
+    <string name="system_apps">系统应用</string>
+    <string name="about_us">关于我们</string>
+    <string name="expanse_the_world">扩展</string>
+    <string name="share">分享</string>
+    <string name="rate_us">评分</string>
+    <string name="feedback">反馈</string>
+    <string name="connect_us">联系我们</string>
 
     <!-- Home screen -->
-    <string name="manufacturer">Manufacturer</string>
-    <string name="brand">Brand</string>
-    <string name="model">Model</string>
-    <string name="board">Board</string>
-    <string name="hardware">Hardware</string>
-    <string name="serial_no">Serial No</string>
+    <string name="manufacturer">厂商</string>
+    <string name="brand">品牌</string>
+    <string name="model">终端用户名称</string>
+    <string name="board">基础平台</string>
+    <string name="hardware">硬件</string>
+    <string name="serial_no">序列号</string>
     <string name="android_id">Android ID</string>
-    <string name="screen_resolution">Screen Resolution</string>
+    <string name="screen_resolution">屏幕分辨率</string>
     <string name="boot_loader">Boot Loader</string>
-    <string name="user">User</string>
+    <string name="user">用户</string>
     <string name="host">Host</string>
-    <string name="imei_number">IMEI Number</string>
+    <string name="imei_number">IMEI 编号</string>
 
-    <string name="version">Version</string>
-    <string name="version_name">Version Name</string>
-    <string name="api_level">API Level</string>
+    <string name="version">版本</string>
+    <string name="version_name">版本名称</string>
+    <string name="api_level">API 等级</string>
     <string name="build_id">Build ID</string>
-    <string name="build_name">Build Time</string>
-    <string name="fingerprint">Fingerprint</string>
+    <string name="build_time">构建时间</string>
+    <string name="fingerprint">指纹</string>
+    <string name="pixels">像素</string>
 
     <!-- OS version names -->
     <string name="honeycomb">Honeycomb</string>
-    <string name="release_date">Release Date:\u0020</string>
+    <string name="release_date">发布日期:\u0020</string>
     <string name="ics">Ice Cream Sandwich</string>
     <string name="jellybean">Jelly Bean</string>
     <string name="kitkat">Kitkat</string>
@@ -60,43 +61,44 @@
     <string name="marshmallow">Marshmallow</string>
     <string name="nougat">Nougat</string>
     <string name="oreo">Oreo</string>
-    <string name="unknown_version">Unknown version</string>
+    <string name="pie">Pie</string>
+    <string name="unknown_version">未知版本</string>
 
     <!-- Battery -->
-    <string name="battery_type">Battery Type</string>
-    <string name="power_source">Power Source</string>
-    <string name="battery_temperature">Battery Temperature </string>
-    <string name="battery_voltage">Battery Voltage </string>
-    <string name="battery_scale">Battery Scale </string>
-    <string name="battery_health">Battery Health </string>
+    <string name="battery_type">电池类型</string>
+    <string name="power_source">电源</string>
+    <string name="battery_temperature">电池温度 </string>
+    <string name="battery_voltage">电池电压 </string>
+    <string name="battery_scale">电池电量 </string>
+    <string name="battery_health">电池健康度 </string>
     <string name="ac_power">AC Power</string>
 
     <!-- Battery health level -->
-    <string name="good">Good</string>
-    <string name="failed">Failed</string>
-    <string name="dead">Dead</string>
-    <string name="over_voltage">Overvoltage</string>
-    <string name="cold">Cold</string>
-    <string name="over_heated">Overheated</string>
-    <string name="unknown">Unknown</string>
+    <string name="good">很好</string>
+    <string name="failed">不及格</string>
+    <string name="dead">失效</string>
+    <string name="over_voltage">过压</string>
+    <string name="cold">低温</string>
+    <string name="over_heated">过热</string>
+    <string name="unknown">未知</string>
 
     <!-- CPU -->
-    <string name="processor_label">Processor</string>
-    <string name="processor">processor</string>
+    <string name="processor_label">处理器</string>
+    <string name="processor">处理器</string>
     <string name="cpu_t">CPU</string>
     <string name="ram_m">RAM</string>
     <string name="used">Used</string>
-    <string name="system_and_apps">System and Apps</string>
-    <string name="available_ram">Available RAM</string>
-    <string name="total_ram_space">Total RAM Space</string>
+    <string name="system_and_apps">系统和应用</string>
+    <string name="available_ram">可用内存</string>
+    <string name="total_ram_space">总内存</string>
     <string name="cpu_model">CPU Model</string>
-    <string name="cores">Cores</string>
-    <string name="actual">Actual RAM</string>
-    <string name="physical_available_ram">Physical Available RAM</string>
+    <string name="cores">核心</string>
+    <string name="actual">真实 RAM</string>
+    <string name="physical_available_ram">物理可用 RAM</string>
     <string name="abi">ABI</string>
     <string name="cpu_variant">CPU Variant</string>
     <string name="serial">Serial</string>
-    <string name="cpu_implementer">CPU Implementer</string>
+    <string name="cpu_implementer">CPU 执行器</string>
     <string name="cpu_part">CPU Part</string>
     <string name="cpu_revision">CPU Revision</string>
     <string name="feature">Features</string>
@@ -108,24 +110,24 @@
     <string name="gl_extension">GL_Extension</string>
 
     <!-- Sensors -->
-    <string name="sensors">Sensors</string>
-    <string name="available_sensor">Sensor available on your Device</string>
-    <string name="available_sensors">Sensors available on your Device</string>
-    <string name="sensor_name">Sensor Name</string>
-    <string name="int_type">Sensor Type</string>
-    <string name="vendor">Vendor</string>
+    <string name="sensors">传感器</string>
+    <string name="available_sensor">设备传感器</string>
+    <string name="available_sensors">设备传感器</string>
+    <string name="sensor_name">传感器名称</string>
+    <string name="int_type">传感器类型</string>
+    <string name="vendor">供应商</string>
     <string name="resolution">Resolution</string>
     <string name="power">Power</string>
     <string name="maximum_range">Maximum Range</string>
-    <string name="is_dynamic">isDynamicSensor</string>
+    <string name="is_dynamic">动态传感器</string>
     <string name="is_wakeup_sensor">isWakeUpSensor</string>
-    <string name="sensor_id">Sensor ID</string>
+    <string name="sensor_id">传感器 ID</string>
     <string name="reporting_mode">Reporting Mode</string>
-    <string name="yes">Yes</string>
-    <string name="no">No</string>
+    <string name="yes">是</string>
+    <string name="no">否</string>
 
     <!-- Sensor details screen header text -->
-    <string name="geomagnetic_field">Geomagnetic field: \n\n</string>
+    <string name="geomagnetic_field">磁场: \n\n</string>
     <string name="proximity_sensor">Proximity:\u0020</string>
     <string name="humidity_sensor">Humidity:\u0020</string>
     <string name="illuminance">Illuminance:\u0020</string>
@@ -150,31 +152,31 @@
     <string name="dp">\u0020dp</string>
 
     <!-- Network screen -->
-    <string name="connection_status">Connection Status</string>
-    <string name="data_type">Data Type</string>
-    <string name="network_type">Network Type</string>
-    <string name="ip_address">IP Address</string>
-    <string name="mac_address">MAC Address</string>
+    <string name="connection_status">连接状态</string>
+    <string name="data_type">数据类型</string>
+    <string name="network_type">网络类型</string>
+    <string name="ip_address">IP 地址</string>
+    <string name="mac_address">MAC 地址</string>
     <string name="ssid">SSID</string>
-    <string name="link_speed">Link Speed</string>
+    <string name="link_speed">连接速度</string>
     <string name="wifi">WiFi</string>
-    <string name="unavailable">Unavailable</string>
-    <string name="connect">Connected</string>
-    <string name="disconnect">Not connected</string>
+    <string name="unavailable">无法获得</string>
+    <string name="connect">已连接</string>
+    <string name="disconnect">未连接</string>
     <string name="mbps">Mbps</string>
 
     <!-- Device Features -->
     <string name="wifi_direct">WiFi Direct</string>
-    <string name="bluetooth">Bluetooth</string>
-    <string name="bluetooth_le">Bluetooth LE</string>
+    <string name="bluetooth">蓝牙</string>
+    <string name="bluetooth_le">低功耗蓝牙</string>
     <string name="gps">GPS</string>
-    <string name="camera_flash">Camera Flash</string>
-    <string name="camera_front">Camera Front</string>
-    <string name="microphone">Microphone</string>
+    <string name="camera_flash">相机闪光灯</string>
+    <string name="camera_front">前置相机</string>
+    <string name="microphone">麦克风</string>
     <string name="nfc">NFC</string>
     <string name="usb_host">USB Host</string>
     <string name="usb_accessory">USB Accessory</string>
-    <string name="multitouch">Multitouch</string>
+    <string name="multitouch">多点触控</string>
     <string name="audio_low_latency">Audio low-latency</string>
     <string name="audio_output">Audio Output</string>
     <string name="professional_audio">Professional Audio</string>
@@ -187,39 +189,39 @@
     <string name="app_widgets">App Widgets</string>
     <string name="sip">SIP</string>
     <string name="sip_based_voip">SIP-based VOIP</string>
-    <string name="available">Available</string>
-    <string name="not_supported">Not Supported</string>
+    <string name="available">支持</string>
+    <string name="not_supported">不支持</string>
     <string name="please_provide_camera_perm">Please provide camera permission to view camera details. App-></string>
     <!-- Storage -->
-    <string name="ram_usage">RAM Usage</string>
-    <string name="internal_storage">Internal Storage</string>
-    <string name="external_storage">External Storage</string>
-    <string name="used_memory">Used:</string>
-    <string name="free">Free:</string>
-    <string name="total">Total:</string>
+    <string name="ram_usage">内存使用率</string>
+    <string name="internal_storage">内部存储</string>
+    <string name="external_storage">外部存储</string>
+    <string name="used_memory">已用:</string>
+    <string name="free">可用:</string>
+    <string name="total">总量:</string>
 
     <!-- Display -->
-    <string name="screen">Screen</string>
-    <string name="density">Density</string>
-    <string name="screen_size">Screen size</string>
+    <string name="screen">屏幕</string>
+    <string name="density">密度</string>
+    <string name="screen_size">屏幕尺寸</string>
     <string name="screen_display_bucket">Display bucket</string>
-    <string name="screen_dpi">Display dpi</string>
-    <string name="screen_logical_density">Logical density</string>
+    <string name="screen_dpi">显示 dpi</string>
+    <string name="screen_logical_density">逻辑密度</string>
     <string name="screen_scaled_density">Scaled density</string>
-    <string name="screen_usable_width">Usable width</string>
-    <string name="screen_usable_height">Usable height</string>
-    <string name="screen_total_width">Screen width</string>
-    <string name="screen_total_height">Screen height</string>
-    <string name="density_independent_width">Density independent width</string>
-    <string name="density_independent_height">Density independent height</string>
-    <string name="screen_physical_size">Physical size</string>
-    <string name="default_screen_orientation">Default orientation</string>
-    <string name="orientation_portrait">Portrait</string>
-    <string name="orientation_landscape">Landscape</string>
-    <string name="orientation_undefined">Undefined</string>
+    <string name="screen_usable_width">可用宽度</string>
+    <string name="screen_usable_height">可用高度</string>
+    <string name="screen_total_width">屏幕宽度</string>
+    <string name="screen_total_height">屏幕高度</string>
+    <string name="density_independent_width">密度无关宽度</string>
+    <string name="density_independent_height">密度无关高度</string>
+    <string name="screen_physical_size">物理尺寸</string>
+    <string name="default_screen_orientation">默认方向</string>
+    <string name="orientation_portrait">纵向</string>
+    <string name="orientation_landscape">横向</string>
+    <string name="orientation_undefined">未定义</string>
     <string name="inches">\u0020inches</string>
     <string name="max_gpu_texture_size">Max GPU texture size</string>
-    <string name="refresh">Refresh rate</string>
+    <string name="refresh">刷新率</string>
     <string name="xdpi">xdpi</string>
     <string name="ydpi">ydpi</string>
     <string name="name">Name</string>
@@ -232,27 +234,27 @@
     <string name="dpi">\u0020dpi</string>
 
     <!-- Bluetooth -->
-    <string name="bluetooth_name">Name</string>
-    <string name="bluetooth_address">Address</string>
-    <string name="scan_mode">Scan Mode</string>
-    <string name="bluetooth_state">Bluetooth State</string>
+    <string name="bluetooth_name">名称</string>
+    <string name="bluetooth_address">地址</string>
+    <string name="scan_mode">扫描方式</string>
+    <string name="bluetooth_state">蓝牙状态</string>
     <string name="bluetooth_discovery">Bluetooth Discovery</string>
-    <string name="turn_on_bluetooth">Turn on bluetooth</string>
-    <string name="turn_off_bluetooth">Turn off bluetooth</string>
-    <string name="switch_on">On</string>
-    <string name="switch_off">Off</string>
+    <string name="turn_on_bluetooth">打开蓝牙</string>
+    <string name="turn_off_bluetooth">关闭蓝牙</string>
+    <string name="switch_on">开</string>
+    <string name="switch_off">关</string>
 
     <!-- About us -->
-    <string name="developer_info">Developer Information</string>
+    <string name="developer_info">开发者信息</string>
     <string name="dev_info">This app has been developed by Quixom Technology. Quixom is a mobile and web app development company oriented towards design thinking approach to mobile app development. Quixom has delivered apps for its customers all over the globe in sectors like gaming, delivery, ecommerce, IOT and many others. To get a free quote, email your requirements to info@quixom.com</string>
     <string name="company_phone">+91 7567751959</string>
     <string name="address">Quixom Tech \nB-12, Galaxy Signature \nOpp Sukhan Bungalows
 \nScience City Road, Ahmedabad</string>
     <string name="website">www.quixom.com</string>
-    <string name="rating_us">Rate us</string>
+    <string name="rating_us">给我们评分</string>
     <string name="about_app">Device Info is a detailed specification of your phone which includes all the possible hardware configurations and other required details about your own device.</string>
     <string name="sim_empty_screen">Phone does not have any sim.</string>
     <string name="c_symbol">\u00B0C</string>
-    <string name="rear_camera">Rear Camera</string>
-    <string name="front_camera">Front Camera</string>
+    <string name="rear_camera">后置相机</string>
+    <string name="front_camera">前置相机</string>
 </resources>
