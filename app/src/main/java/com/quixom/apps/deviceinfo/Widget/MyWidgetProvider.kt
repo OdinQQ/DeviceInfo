@@ -20,6 +20,7 @@ import java.text.DecimalFormat
  */
 
 class MyWidgetProvider : AppWidgetProvider() {
+
     var totalRamValue: Long? = null
     var freeRamValue: Long? = null
     var usedRamValue: Long? = null
@@ -27,6 +28,7 @@ class MyWidgetProvider : AppWidgetProvider() {
 
     override fun onUpdate(context: Context, appWidgetManager: AppWidgetManager,
                           appWidgetIds: IntArray) {
+
         updateAppWidget(context, appWidgetManager)
 
               /*   val manager = context.getSystemService(Context.ALARM_SERVICE) as AlarmManager

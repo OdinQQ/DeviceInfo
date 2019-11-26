@@ -11,6 +11,8 @@ import android.widget.TextView
 import com.quixom.apps.deviceinfo.R
 import com.quixom.apps.deviceinfo.utilities.Methods
 import kotlinx.android.synthetic.main.fragment_network.*
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.MainScope
 
 
 class NetworkFragment : BaseFragment() {
@@ -64,7 +66,7 @@ class NetworkFragment : BaseFragment() {
         }
     }
 
-    private fun initToolbar(): Unit {
+    private fun initToolbar() {
         ivMenu?.visibility = View.VISIBLE
         ivBackNet?.visibility = View.GONE
         tvTitle?.text = mResources.getString(R.string.network)
@@ -73,9 +75,11 @@ class NetworkFragment : BaseFragment() {
         }
     }
 
+    /**
+     * 获取网络信息
+     */
     @SuppressLint("SetTextI18n", "WifiManagerLeak")
-    private fun getNetworkInfo(): Unit {
-
+    private fun getNetworkInfo() {
         if (Methods.isNetworkConnected(mActivity)) {
             tvConnectionStatus?.text = mResources.getString(R.string.connect)
             animationView.visibility = View.VISIBLE
@@ -85,26 +89,27 @@ class NetworkFragment : BaseFragment() {
             tvConnectionStatus?.text = mResources.getString(R.string.disconnect)
             tvIpAddress?.text = mResources.getString(R.string.unavailable)
         }
-
-        if (Methods.isWifiConnected(mActivity) == mResources.getString(R.string.wifi)) {
-            val wifiManager = mActivity.getSystemService(WIFI_SERVICE) as WifiManager
-            val wifiInfo = wifiManager.connectionInfo
-            tvDataType?.text = mResources.getString(R.string.wifi)
-            tvNetworkType?.text = mResources.getString(R.string.wifi)
-            tvSSID?.text = wifiInfo.ssid
-            tvMACAddress?.text = Methods.getMACAddress("wlan0")
-            tvLinkSpeed?.text = wifiInfo.linkSpeed.toString()+mResources.getString(R.string.mbps)
-        }
-        else if (Methods.isWifiConnected(mActivity) == mResources.getString(R.string.network)) {
-            tvDataType?.text = mResources.getString(R.string.network)
-            tvNetworkType?.text = mResources.getString(R.string.network)
-            tvSSID?.text = mResources.getString(R.string.unavailable)
-            tvMACAddress?.text = Methods.getMACAddress("eth0")
-            tvLinkSpeed?.text = mResources.getString(R.string.unavailable)
-        }
-        else {
-            tvDataType?.text = mResources.getString(R.string.unavailable)
-            tvNetworkType?.text = mResources.getString(R.string.unavailable)
+        when {
+            Methods.isWifiConnected(mActivity) == mResources.getString(R.string.wifi) -> {
+                val wifiManager = mActivity.getSystemService(WIFI_SERVICE) as WifiManager
+                val wifiInfo = wifiManager.connectionInfo
+                tvDataType?.text = mResources.getString(R.string.wifi)
+                tvNetworkType?.text = mResources.getString(R.string.wifi)
+                tvSSID?.text = wifiInfo.ssid
+                tvMACAddress?.text = Methods.getMACAddress("wlan0")
+                tvLinkSpeed?.text = wifiInfo.linkSpeed.toString() + mResources.getString(R.string.mbps)
+            }
+            Methods.isWifiConnected(mActivity) == mResources.getString(R.string.network) -> {
+                tvDataType?.text = mResources.getString(R.string.network)
+                tvNetworkType?.text = mResources.getString(R.string.network)
+                tvSSID?.text = mResources.getString(R.string.unavailable)
+                tvMACAddress?.text = Methods.getMACAddress("eth0")
+                tvLinkSpeed?.text = mResources.getString(R.string.unavailable)
+            }
+            else -> {
+                tvDataType?.text = mResources.getString(R.string.unavailable)
+                tvNetworkType?.text = mResources.getString(R.string.unavailable)
+            }
         }
     }
 }

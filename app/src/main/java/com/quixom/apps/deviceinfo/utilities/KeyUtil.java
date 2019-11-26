@@ -6,6 +6,7 @@ package com.quixom.apps.deviceinfo.utilities;
  */
 
 public class KeyUtil {
+
     public static final String datePattern = "dd MMM yyyy HH:mm:ss z";
     public static final String KEY_MODE = "key_mode";
 

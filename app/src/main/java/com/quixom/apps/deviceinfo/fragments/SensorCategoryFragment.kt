@@ -117,10 +117,6 @@ class SensorCategoryFragment : BaseFragment() {
         mainTextView.gravity = Gravity.CENTER_HORIZONTAL
         mainTextView.setTextColor(Color.WHITE)
         view?.setBackgroundColor(ContextCompat.getColor(mActivity, R.color.purple))
-
-
         mSnackBar.show()
     }
-
 }
-

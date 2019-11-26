@@ -17,74 +17,77 @@ public class FragmentUtil {
         this.mActivity = mActivity;
     }
 
-    public void addFragment(final Fragment fragment, final boolean isAddToBackStack, final boolean shouldAnimate)
-    {
-        pushFragment(fragment,null, R.id.fragment_container, isAddToBackStack, true, shouldAnimate, false);
+    public void addFragment(final Fragment fragment, final boolean isAddToBackStack, final boolean shouldAnimate) {
+        pushFragment(fragment, null, R.id.fragment_container, isAddToBackStack, true, shouldAnimate, false);
     }
 
-    public void replaceFragment(final Fragment fragment, final boolean isAddToBackStack, final boolean shouldAnimate)
-    {
-        pushFragment(fragment,null, R.id.fragment_container, isAddToBackStack, false, shouldAnimate, false);
+    public void replaceFragment(final Fragment fragment, final boolean isAddToBackStack, final boolean shouldAnimate) {
+        pushFragment(fragment, null, R.id.fragment_container, isAddToBackStack, false, shouldAnimate, false);
     }
 
-    public void addFragmentIgnorIfCurrent(final Fragment fragment, final boolean isAddToBackStack, final boolean shouldAnimate)
-    {
-        pushFragment(fragment,null,R.id.fragment_container, isAddToBackStack, true, shouldAnimate, true);
+    public void addFragmentIgnorIfCurrent(final Fragment fragment, final boolean isAddToBackStack, final boolean shouldAnimate) {
+        pushFragment(fragment, null, R.id.fragment_container, isAddToBackStack, true, shouldAnimate, true);
     }
-    public void replaceFragmentIgnorIfCurrent(final Fragment fragment, final boolean isAddToBackStack, final boolean shouldAnimate)
-    {
-        pushFragment(fragment,null,R.id.fragment_container, isAddToBackStack, false, shouldAnimate, true);
+
+    public void replaceFragmentIgnorIfCurrent(final Fragment fragment, final boolean isAddToBackStack, final boolean shouldAnimate) {
+        pushFragment(fragment, null, R.id.fragment_container, isAddToBackStack, false, shouldAnimate, true);
     }
 
     //
-
-    public void addChildFragment(final Fragment fragment, final Fragment parentFragment, final int containerId, final boolean isAddToBackStack, final boolean shouldAnimate)
-    {
-        pushFragment(fragment,parentFragment,containerId, isAddToBackStack, true, shouldAnimate, false);
-    }
-    public void replaceChildFragment(final Fragment fragment, final Fragment parentFragment, final int containerId, final boolean isAddToBackStack, final boolean shouldAnimate)
-    {
-        pushFragment(fragment,parentFragment,containerId, isAddToBackStack, false, shouldAnimate, false);
+    public void addChildFragment(final Fragment fragment, final Fragment parentFragment, final int containerId, final boolean isAddToBackStack, final boolean shouldAnimate) {
+        pushFragment(fragment, parentFragment, containerId, isAddToBackStack, true, shouldAnimate, false);
     }
 
-    public void addChildFragmentIgnorIfCurrent(final Fragment fragment, final Fragment parentFragment, final int containerId, final boolean isAddToBackStack, final boolean shouldAnimate)
-    {
-        pushFragment(fragment,parentFragment,containerId, isAddToBackStack, true, shouldAnimate, true);
-    }
-    public void replaceChildFragmentIgnorIfCurrent(final Fragment fragment, final Fragment parentFragment, final int containerId, final boolean isAddToBackStack, final boolean shouldAnimate)
-    {
-        pushFragment(fragment,parentFragment,containerId, isAddToBackStack, false, shouldAnimate, true);
+    public void replaceChildFragment(final Fragment fragment, final Fragment parentFragment, final int containerId, final boolean isAddToBackStack, final boolean shouldAnimate) {
+        pushFragment(fragment, parentFragment, containerId, isAddToBackStack, false, shouldAnimate, false);
     }
 
+    public void addChildFragmentIgnorIfCurrent(final Fragment fragment, final Fragment parentFragment, final int containerId, final boolean isAddToBackStack, final boolean shouldAnimate) {
+        pushFragment(fragment, parentFragment, containerId, isAddToBackStack, true, shouldAnimate, true);
+    }
 
-    private void pushFragment(final Fragment fragment, final Fragment parentFragment, final int containerId, boolean isAddToBackStack, boolean isJustAdd, final boolean shouldAnimate, final boolean ignorIfCurrent)
-    {
+    public void replaceChildFragmentIgnorIfCurrent(final Fragment fragment, final Fragment parentFragment, final int containerId, final boolean isAddToBackStack, final boolean shouldAnimate) {
+        pushFragment(fragment, parentFragment, containerId, isAddToBackStack, false, shouldAnimate, true);
+    }
+
+    /**
+     *
+     * @param fragment
+     * @param parentFragment
+     * @param containerId
+     * @param isAddToBackStack 是否添加到回退栈
+     * @param isJustAdd 只添加
+     * @param shouldAnimate 是否开启动画
+     * @param ignorIfCurrent 是否忽略（Fragment 正在当前显示）
+     */
+    private void pushFragment(final Fragment fragment,
+                              final Fragment parentFragment,
+                              final int containerId,
+                              boolean isAddToBackStack,
+                              boolean isJustAdd,
+                              final boolean shouldAnimate,
+                              final boolean ignorIfCurrent) {
         if (fragment == null)
             return;
         // Add the fragment to the 'fragment_container' FrameLayout
         final FragmentManager fragmentManager;// = getSupportFragmentManager();
 
-        if (parentFragment != null)
-        {
+        if (parentFragment != null) {
             fragmentManager = parentFragment.getChildFragmentManager();
-        }
-        else {
+        } else {
             fragmentManager = mActivity.getSupportFragmentManager();
         }
-
-
-        // Find current visible fragment
+        // 当前可见 Fragment
         Fragment fragmentCurrent = fragmentManager.findFragmentById(R.id.fragment_container);
-
-        if (ignorIfCurrent && fragmentCurrent!=null) {
+        // 忽略
+        if (ignorIfCurrent && fragmentCurrent != null) {
             if (fragment.getClass().getCanonicalName().equalsIgnoreCase(fragmentCurrent.getTag())) {
                 return;
             }
         }
-
-
+        // FragmentTransaction
         FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-
+        // 动画
         if (shouldAnimate) {
 //            fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
             fragmentTransaction.setCustomAnimations(android.R.anim.fade_in, android.R.anim.fade_out, android.R.anim.fade_in, android.R.anim.fade_out);
@@ -92,15 +95,13 @@ public class FragmentUtil {
             fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN);
         }
 
-        if (fragmentCurrent != null)
-        {
+        if (fragmentCurrent != null) {
             fragmentTransaction.hide(fragmentCurrent);
         }
 
         if (isAddToBackStack) {
             fragmentTransaction.addToBackStack(fragment.getClass().getCanonicalName());
-        }
-        else {
+        } else {
 
            /* List<Fragment> fragmentList = fragmentManager.getFragments();
             if (fragmentList != null && !fragmentList.isEmpty())
@@ -119,11 +120,9 @@ public class FragmentUtil {
 
         if (isJustAdd) {
             fragmentTransaction.add(containerId, fragment, fragment.getClass().getCanonicalName());
-        }
-        else {
+        } else {
             fragmentTransaction.replace(containerId, fragment, fragment.getClass().getCanonicalName());
         }
-
 
         try {
 //            fragmentTransaction.commit();
@@ -131,28 +130,20 @@ public class FragmentUtil {
 
             if (!isAddToBackStack) {
 //                fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
-
             }
-
             Methods.hideKeyboard(mActivity);
-
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
-    public Fragment getCurrentFragment()
-    {
+    public Fragment getCurrentFragment() {
         FragmentManager fragmentManager = mActivity.getSupportFragmentManager();
         // Find current visible fragment
         return fragmentManager.findFragmentById(R.id.fragment_container);
     }
 
-        public void clearBackStackFragmets()
-    {
+    public void clearBackStackFragmets() {
 
        /* if (1==1)
             return;*/
@@ -163,30 +154,22 @@ public class FragmentUtil {
             fragmentManager.popBackStackImmediate(null, FragmentManager.POP_BACK_STACK_INCLUSIVE);
             // fragmentManager.popBackStackImmediate(SplashFragment.class.getCanonicalName(),FragmentManager.POP_BACK_STACK_INCLUSIVE);
             List<Fragment> fragmentList = fragmentManager.getFragments();
-            if (fragmentList != null && !fragmentList.isEmpty())
-            {
+            if (fragmentList != null && !fragmentList.isEmpty()) {
                 FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-                for (Fragment fragment : fragmentList)
-                {
-                    if (fragment != null)
-                    {
+                for (Fragment fragment : fragmentList) {
+                    if (fragment != null) {
                         fragmentTransaction.remove(fragment);
                     }
                 }
                 fragmentTransaction.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
                 fragmentTransaction.commit();
             }
-        }
-        catch (Exception e)
-        {
+        } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
-
-    public void clearBackStackFragmets(FragmentManager fragmentManager)
-    {
+    public void clearBackStackFragmets(FragmentManager fragmentManager) {
         // in my case I get the support fragment manager, it should work with the native one too
 //        FragmentManager fragmentManager = getSupportFragmentManager();
         // this will clear the back stack and displays no animation on the screen
@@ -194,13 +177,10 @@ public class FragmentUtil {
         // fragmentManager.popBackStackImmediate(SplashFragment.class.getCanonicalName(),FragmentManager.POP_BACK_STACK_INCLUSIVE);
 
         List<Fragment> fragmentList = fragmentManager.getFragments();
-        if (fragmentList != null && !fragmentList.isEmpty())
-        {
+        if (fragmentList != null && !fragmentList.isEmpty()) {
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-            for (Fragment fragment : fragmentList)
-            {
-                if (fragment != null)
-                {
+            for (Fragment fragment : fragmentList) {
+                if (fragment != null) {
                     fragmentTransaction.remove(fragment);
                 }
             }
@@ -208,14 +188,10 @@ public class FragmentUtil {
         }
 
 //        Methods.hideKeyboard();
-
-
     }
 
-    public void addTabClildFragment(Fragment fragmentParent, Fragment fragmentChild)
-    {
-        if (fragmentParent != null && fragmentChild != null)
-        {
+    public void addTabClildFragment(Fragment fragmentParent, Fragment fragmentChild) {
+        if (fragmentParent != null && fragmentChild != null) {
             FragmentManager fragmentManager = fragmentParent.getChildFragmentManager();
             clearBackStackFragmets(fragmentManager);
             FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
@@ -224,8 +200,7 @@ public class FragmentUtil {
         }
     }
 
-    public void clearBackStackFragmets(final String tag)
-    {
+    public void clearBackStackFragmets(final String tag) {
         // in my case I get the support fragment manager, it should work with the native one too
         FragmentManager fragmentManager = mActivity.getSupportFragmentManager();
         // this will clear the back stack and displays no animation on the screen

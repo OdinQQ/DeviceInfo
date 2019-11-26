@@ -67,7 +67,6 @@ class SensorDetailFragment : BaseFragment(), SensorEventListener {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.statusBarColor = resources.getColor(R.color.dark_purple)
             window.navigationBarColor = resources.getColor(R.color.dark_purple)
-
         }
         ivMenuSensor = view.findViewById(R.id.iv_menu)
         ivBack = view.findViewById(R.id.iv_back)
@@ -98,13 +97,15 @@ class SensorDetailFragment : BaseFragment(), SensorEventListener {
         getBundleData()
         initToolbar()
         sensorManager = mActivity.getSystemService(Context.SENSOR_SERVICE) as SensorManager
-        sensorManager?.registerListener(this, sensorType?.let { sensorManager?.getDefaultSensor(it) }, SensorManager.SENSOR_DELAY_NORMAL)
+        sensorManager?.registerListener(this, sensorType?.let {
+            sensorManager?.getDefaultSensor(it) }, SensorManager.SENSOR_DELAY_NORMAL)
         displaySensorsDetails(sensorManager!!)
     }
 
     override fun onResume() {
         super.onResume()
-        sensorManager?.registerListener(this, sensorType?.let { sensorManager?.getDefaultSensor(it) }, SensorManager.SENSOR_DELAY_NORMAL)
+        sensorManager?.registerListener(this, sensorType?.let {
+            sensorManager?.getDefaultSensor(it) }, SensorManager.SENSOR_DELAY_NORMAL)
     }
 
     override fun onPause() {
@@ -234,7 +235,6 @@ class SensorDetailFragment : BaseFragment(), SensorEventListener {
                 tvYAxis?.text = ("Y: " + formatter.format(y))
                 tvZAxis?.text = ("Z: " + formatter.format(z))
             }
-
         }
         /*** Pressure sensor (Barometer) */
         else if (sensorManager?.getDefaultSensor(Sensor.TYPE_PRESSURE)?.type === (sensorType)) {
@@ -254,7 +254,8 @@ class SensorDetailFragment : BaseFragment(), SensorEventListener {
             llTop?.visibility = View.VISIBLE
 
             if (event != null) {
-                if (event.sensor.type == Sensor.TYPE_RELATIVE_HUMIDITY && event.values[0] < sensorManager?.getDefaultSensor(Sensor.TYPE_PROXIMITY)?.maximumRange!!) {
+                if (event.sensor.type == Sensor.TYPE_RELATIVE_HUMIDITY &&
+                        event.values[0] < sensorManager?.getDefaultSensor(Sensor.TYPE_PROXIMITY)?.maximumRange!!) {
                     tvXAxis?.text = (mResources.getString(R.string.proximity_sensor) + event.values[0].toString() + mResources.getString(R.string.cm))
                 } else {
                     tvXAxis?.text = (mResources.getString(R.string.proximity_sensor) + event.values[0].toString() + mResources.getString(R.string.cm))
@@ -268,7 +269,6 @@ class SensorDetailFragment : BaseFragment(), SensorEventListener {
                 if (event.sensor.type == Sensor.TYPE_LIGHT) {
                     tvXAxis?.text = (mResources.getString(R.string.illuminance) + event.values[0].toString() + mResources.getString(R.string.lx))
                 }
-
 
                 if (event.sensor.type == Sensor.TYPE_AMBIENT_TEMPERATURE && KeyUtil.KEY_LAST_KNOWN_HUMIDITY != 0f) {
                     val temperature = event.values[0]
@@ -291,18 +291,40 @@ class SensorDetailFragment : BaseFragment(), SensorEventListener {
 
     @TargetApi(Build.VERSION_CODES.KITKAT_WATCH)
     private fun displaySensorsDetails(sensorManager: SensorManager) {
-        tvIntType?.text = sensorType?.let { sensorManager.getDefaultSensor(it)?.stringType }
-        tvVendor?.text = sensorType?.let { sensorManager.getDefaultSensor(it)?.vendor }
-        tvVersion?.text = sensorType?.let { sensorManager.getDefaultSensor(it)?.version.toString() }
-        tvResolution?.text = sensorType?.let { Html.fromHtml(sensorManager.getDefaultSensor(it)?.resolution.toString() + " m/s" + "<small><sup>2</sup></small>") }
-        tvPower?.text = sensorType?.let { sensorManager.getDefaultSensor(it)?.power.toString() + mResources.getString(R.string.ma) }
-        tvMaximumRange?.text = sensorType?.let { Html.fromHtml(sensorManager.getDefaultSensor(it)?.maximumRange.toString() + " m/s" + "<small><sup>2</sup></small>") }
+        tvIntType?.text = sensorType?.let {
+            sensorManager.getDefaultSensor(it)?.stringType
+        }
+        tvVendor?.text = sensorType?.let {
+            sensorManager.getDefaultSensor(it)?.vendor
+        }
+        tvVersion?.text = sensorType?.let {
+            sensorManager.getDefaultSensor(it)?.version.toString()
+        }
+        tvResolution?.text = sensorType?.let {
+            Html.fromHtml(sensorManager.getDefaultSensor(it)?.resolution.toString() +
+                    " m/s" + "<small><sup>2</sup></small>")
+        }
+        tvPower?.text = sensorType?.let {
+            sensorManager.getDefaultSensor(it)?.power.toString() + mResources.getString(R.string.ma)
+        }
+        tvMaximumRange?.text = sensorType?.let {
+            Html.fromHtml(sensorManager.getDefaultSensor(it)?.maximumRange.toString() +
+                    " m/s" + "<small><sup>2</sup></small>")
+        }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
-            tvSensorId?.text = sensorType?.let { sensorManager.getDefaultSensor(it)?.id.toString() }
-            tvIsDynamic?.text = sensorType?.let { sensorManager.getDefaultSensor(it)?.isDynamicSensor.toString() }
-            tvIsWakeUpSensor?.text = sensorType?.let { sensorManager.getDefaultSensor(it)?.isWakeUpSensor.toString() }
-            tvReportingMode?.text = sensorType?.let { sensorManager.getDefaultSensor(it)?.reportingMode.toString() }
+            tvSensorId?.text = sensorType?.let {
+                sensorManager.getDefaultSensor(it)?.id.toString()
+            }
+            tvIsDynamic?.text = sensorType?.let {
+                sensorManager.getDefaultSensor(it)?.isDynamicSensor.toString()
+            }
+            tvIsWakeUpSensor?.text = sensorType?.let {
+                sensorManager.getDefaultSensor(it)?.isWakeUpSensor.toString()
+            }
+            tvReportingMode?.text = sensorType?.let {
+                sensorManager.getDefaultSensor(it)?.reportingMode.toString()
+            }
         } else {
             tvSensorId?.text = "-"
             tvIsDynamic?.text = "-"

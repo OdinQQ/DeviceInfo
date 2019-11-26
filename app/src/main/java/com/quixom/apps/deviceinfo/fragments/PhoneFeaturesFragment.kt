@@ -105,7 +105,7 @@ class PhoneFeaturesFragment : BaseFragment() {
         }
     }
 
-    private fun initToolbar(): Unit {
+    private fun initToolbar() {
         ivMenu?.visibility = View.VISIBLE
         ivBack?.visibility = View.GONE
         tvTitle?.text = mResources.getString(R.string.features)

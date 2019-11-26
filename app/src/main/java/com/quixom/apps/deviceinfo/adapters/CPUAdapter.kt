@@ -14,12 +14,12 @@ import com.quixom.apps.deviceinfo.models.FeaturesHW
 
 class CPUAdapter(internal var appslist: ArrayList<FeaturesHW>, internal var mActivity: MainActivity) : RecyclerView.Adapter<CPUAdapter.DeviceVH>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): CPUAdapter.DeviceVH {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CPUAdapter.DeviceVH {
         val itemView = LayoutInflater.from(mActivity).inflate(R.layout.row_cpu_item, parent, false)
         return DeviceVH(itemView)
     }
 
-    override fun onBindViewHolder(holder: CPUAdapter.DeviceVH?, position: Int) {
+    override fun onBindViewHolder(holder: CPUAdapter.DeviceVH, position: Int) {
         holder?.bindData(appslist[position], position)
     }
 

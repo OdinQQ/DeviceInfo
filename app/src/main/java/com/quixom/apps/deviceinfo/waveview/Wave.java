@@ -12,6 +12,7 @@ import com.quixom.apps.deviceinfo.R;
 
 // y=Asin(ωx+φ)+k
 class Wave extends View {
+
     private final int WAVE_HEIGHT_LARGE = 60;
     private final int WAVE_HEIGHT_MIDDLE = 30;
     private final int WAVE_HEIGHT_LITTLE = 27;
@@ -66,7 +67,6 @@ class Wave extends View {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-
         canvas.drawPath(mBlowWavePath, mBlowWavePaint);
         canvas.drawPath(mAboveWavePath, mAboveWavePaint);
     }
@@ -151,13 +151,12 @@ class Wave extends View {
     private void calculatePath() {
         mAboveWavePath.reset();
         mBlowWavePath.reset();
-
         getWaveOffset();
-
         float y;
+
         mAboveWavePath.moveTo(left, bottom);
         for (float x = 0; x <= mMaxRight; x += X_SPACE) {
-            y = (float) (mWaveHeight * Math.sin(omega * x + mAboveOffset+5) + mWaveHeight);
+            y = (float) (mWaveHeight * Math.sin(omega * x + mAboveOffset + 5) + mWaveHeight);
             mAboveWavePath.lineTo(x, y);
         }
         mAboveWavePath.lineTo(right, bottom);
@@ -200,7 +199,7 @@ class Wave extends View {
     @Override
     protected void onLayout(boolean changed, int left, int top, int right, int bottom) {
         super.onLayout(changed, left, top, right, bottom);
-        if (mWaveLength==0){
+        if (mWaveLength == 0) {
             startWave();
         }
     }
@@ -223,7 +222,6 @@ class Wave extends View {
         } else {
             mBlowOffset += mWaveHz;
         }
-
         if (mAboveOffset > Float.MAX_VALUE - 100) {
             mAboveOffset = 0;
         } else {
@@ -231,19 +229,20 @@ class Wave extends View {
         }
     }
 
+    /**
+     * 刷新 UI 任务
+     */
     private class RefreshProgressRunnable implements Runnable {
+
+        @Override
         public void run() {
             synchronized (Wave.this) {
                 long start = System.currentTimeMillis();
-
                 calculatePath();
-
                 invalidate();
-
                 long gap = 16 - (System.currentTimeMillis() - start);
                 postDelayed(this, gap < 0 ? 0 : gap);
             }
         }
     }
-
 }

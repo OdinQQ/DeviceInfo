@@ -23,6 +23,7 @@ import java.util.*
  */
 
 class AppWidgetService : Service() {
+
     var totalRamValue: Long? = null
     var freeRamValue: Long? = null
     var usedRamValue: Long? = null
@@ -33,12 +34,16 @@ class AppWidgetService : Service() {
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+
         val appWidgetManager: AppWidgetManager = AppWidgetManager.getInstance(this@AppWidgetService)
         val allWidgetIds = intent?.getIntArrayExtra(AppWidgetManager.EXTRA_APPWIDGET_IDS)
 
         val timer = Timer()
+        //
         val hourlyTask = object : TimerTask() {
+
             override fun run() {
+                // ConnectivityManager
                 val cm: ConnectivityManager = this@AppWidgetService.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
                 showRAMUsage()
                 val view = RemoteViews(packageName, R.layout.widget_layout)
@@ -50,15 +55,13 @@ class AppWidgetService : Service() {
 
                 val theWidget = ComponentName(this@AppWidgetService, MyWidgetProvider::class.java!!)
                 val manager = AppWidgetManager.getInstance(this@AppWidgetService)
+                // 更新小组件
                 manager.updateAppWidget(theWidget, view)
-
             }
         }
         // schedule the task to run starting now and then every half-an-hour...
         timer.schedule(hourlyTask, 0L, 1000)
-
         return START_STICKY
-
     }
 
     @SuppressLint("SetTextI18n")
@@ -90,5 +93,4 @@ class AppWidgetService : Service() {
         val digitGroups = (Math.log10(size.toDouble()) / Math.log10(1024.0)).toInt()
         return DecimalFormat("#,##0.#").format(size / Math.pow(1024.0, digitGroups.toDouble())) + " " + units[digitGroups]
     }
-
 }

@@ -7,6 +7,7 @@ import android.os.BatteryManager
  * Created by akif on 10/6/17.
  */
 class BatteryStats {
+
     /**
      * private instance to handle the battery intent.
      */
@@ -17,10 +18,8 @@ class BatteryStats {
      */
     private fun BatteryStats(){}
 
-
     /**
      * Constructor with Intent as parameter.
-     *
      *
      * {@param batteryIntent} Returned when registering a null receiver with a Intent filter ( Changes listened once )
      * or an intent from onReceive of broadcast receiver.
@@ -29,16 +28,17 @@ class BatteryStats {
         this.batteryIntent = intent
     }
 
-
     /**
+     * 是否正在充电
+     *
      * Method to check whether device is charging.
      */
     fun isCharging(): Boolean {
-
+        // 插入的电源类型
         val plugState = batteryIntent?.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1)
-
         return plugState == BatteryManager.BATTERY_PLUGGED_AC ||
-                plugState == BatteryManager.BATTERY_PLUGGED_USB || plugState == BatteryManager.BATTERY_PLUGGED_WIRELESS
+                plugState == BatteryManager.BATTERY_PLUGGED_USB ||
+                plugState == BatteryManager.BATTERY_PLUGGED_WIRELESS
     }
 
     /**

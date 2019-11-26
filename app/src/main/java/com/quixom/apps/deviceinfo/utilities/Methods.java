@@ -233,7 +233,6 @@ public class Methods {
         return builder;
     }
 
-
     /**
      * Set string with spannable.
      *
@@ -241,12 +240,9 @@ public class Methods {
      */
     @android.support.annotation.RequiresApi(api = Build.VERSION_CODES.O)
     public static SpannableStringBuilder getSpannableSensorText(Context context, String text) {
-
-
         String[] result = text.split("\n\n");
         String first = result[0];
         String second = result[1];
-
         Typeface font1 = mActivity.getResources().getFont(R.font.lato_light);
         Typeface font2 = mActivity.getResources().getFont(R.font.lato_regular);
 

@@ -26,11 +26,11 @@ import com.quixom.apps.deviceinfo.R
 import com.quixom.apps.deviceinfo.adapters.CameraAdapter
 import com.quixom.apps.deviceinfo.models.FeaturesHW
 import com.quixom.apps.deviceinfo.utilities.KeyUtil
-import java.lang.StringBuilder
 import java.util.*
 
 
 class CameraFragment : BaseFragment(), View.OnClickListener {
+
     @RequiresApi(Build.VERSION_CODES.M)
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onClick(view: View?) {
@@ -58,12 +58,13 @@ class CameraFragment : BaseFragment(), View.OnClickListener {
     private var rvCameraFeatures: RecyclerView? = null
 
     var camera: Camera? = null
+    // 相机管理器
     private var cameraManager: CameraManager? = null
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 //        val view = inflater.inflate(R.layout.fragment_camera, container, false)
-
+        // 更改样式
         val contextThemeWrapper = ContextThemeWrapper(activity, R.style.CameraTheme)
         val localInflater = inflater.cloneInContext(contextThemeWrapper)
         val view = localInflater.inflate(R.layout.fragment_camera, container, false)
@@ -73,8 +74,8 @@ class CameraFragment : BaseFragment(), View.OnClickListener {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.statusBarColor = resources.getColor(R.color.dark_green_blue)
             window.navigationBarColor = resources.getColor(R.color.dark_green_blue)
-
         }
+
         ivMenu = view.findViewById(R.id.iv_menu)
         ivBack = view.findViewById(R.id.iv_back)
         tvTitle = view.findViewById(R.id.tv_title)
@@ -124,11 +125,11 @@ class CameraFragment : BaseFragment(), View.OnClickListener {
         }
     }
 
-    @RequiresApi(Build.VERSION_CODES.M)
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     /**
      * this method will show permission pop up messages to user.
      */
+    @RequiresApi(Build.VERSION_CODES.M)
+    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private fun checkCameraPermission(ids: String) {
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             val hasWriteCameraPermission = mActivity.checkSelfPermission(Manifest.permission.CAMERA)
@@ -149,7 +150,7 @@ class CameraFragment : BaseFragment(), View.OnClickListener {
         when (requestCode) {
             KeyUtil.KEY_CAMERA_CODE -> if (permissions.isNotEmpty()) {
                 if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-                    // Permission Granted
+                    // 获取权限
                     fetchCameraCharacteristics(cameraManager!!, "1")
                 } else if (grantResults[0] == PackageManager.PERMISSION_DENIED) {
                     // Should we show an explanation?
@@ -163,6 +164,9 @@ class CameraFragment : BaseFragment(), View.OnClickListener {
         }
     }
 
+    /**
+     * 切换 Tab 样式
+     */
     private fun tabSelector(textview1: TextView, textview2: TextView) {
         /*** Set text color */
         textview1.setTextColor(ContextCompat.getColor(mActivity, R.color.font_white))
@@ -177,17 +181,17 @@ class CameraFragment : BaseFragment(), View.OnClickListener {
         textview2.setBackgroundResource(R.drawable.rectangle_unfill)
     }
 
+    /**
+     * 获取相机特性
+     */
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private fun fetchCameraCharacteristics(cameraManager: CameraManager, ids: String) {
         val lists = ArrayList<FeaturesHW>()
-
         val sb = StringBuilder()
         val characteristics = cameraManager.getCameraCharacteristics(ids)
-
         for (key in characteristics.keys) {
             sb.append(key.name).append("=").append(getCharacteristicsValue(key, characteristics)).append("\n\n")
             val keyNm = key.name.split(".")
-
             if (getCharacteristicsValue(key, characteristics) != "") {
                 if (key.name.split(".").size == 4) {
                     lists.add(FeaturesHW(keyNm[3], getCharacteristicsValue(key, characteristics)))
@@ -196,94 +200,102 @@ class CameraFragment : BaseFragment(), View.OnClickListener {
                 }
             }
         }
-
+        //
         val adapter = CameraAdapter(lists, mActivity)
-
         //now adding the adapter to RecyclerView
         rvCameraFeatures?.adapter = adapter
     }
 
+    /**
+     * 获得属性值
+     */
     @SuppressLint("NewApi")
     @Suppress("UNCHECKED_CAST")
     private fun <T> getCharacteristicsValue(key: CameraCharacteristics.Key<T>, characteristics: CameraCharacteristics): String {
         val values = mutableListOf<String>()
-
-        if (CameraCharacteristics.COLOR_CORRECTION_AVAILABLE_ABERRATION_MODES == key) {
-            val modes = characteristics.get(key) as IntArray
-            modes.forEach {
-                when (it) {
-                    CameraCharacteristics.COLOR_CORRECTION_ABERRATION_MODE_OFF -> values.add("Off")
-                    CameraCharacteristics.COLOR_CORRECTION_ABERRATION_MODE_FAST -> values.add("Fast")
-                    CameraCharacteristics.COLOR_CORRECTION_ABERRATION_MODE_HIGH_QUALITY -> values.add("High Quality")
+        when (key) {
+            CameraCharacteristics.COLOR_CORRECTION_AVAILABLE_ABERRATION_MODES -> {
+                val modes = characteristics.get(key) as IntArray
+                modes.forEach {
+                    when (it) {
+                        CameraCharacteristics.COLOR_CORRECTION_ABERRATION_MODE_OFF -> values.add("Off")
+                        CameraCharacteristics.COLOR_CORRECTION_ABERRATION_MODE_FAST -> values.add("Fast")
+                        CameraCharacteristics.COLOR_CORRECTION_ABERRATION_MODE_HIGH_QUALITY -> values.add("High Quality")
+                    }
                 }
             }
-        } else if (CameraCharacteristics.CONTROL_AE_AVAILABLE_ANTIBANDING_MODES == key) {
-            val modes = characteristics.get(key) as IntArray
-            modes.forEach {
-                when (it) {
-                    CameraCharacteristics.CONTROL_AE_ANTIBANDING_MODE_OFF -> values.add("Off")
-                    CameraCharacteristics.CONTROL_AE_ANTIBANDING_MODE_AUTO -> values.add("Auto")
-                    CameraCharacteristics.CONTROL_AE_ANTIBANDING_MODE_50HZ -> values.add("50Hz")
-                    CameraCharacteristics.CONTROL_AE_ANTIBANDING_MODE_60HZ -> values.add("60Hz")
+            CameraCharacteristics.CONTROL_AE_AVAILABLE_ANTIBANDING_MODES -> {
+                val modes = characteristics.get(key) as IntArray
+                modes.forEach {
+                    when (it) {
+                        CameraCharacteristics.CONTROL_AE_ANTIBANDING_MODE_OFF -> values.add("Off")
+                        CameraCharacteristics.CONTROL_AE_ANTIBANDING_MODE_AUTO -> values.add("Auto")
+                        CameraCharacteristics.CONTROL_AE_ANTIBANDING_MODE_50HZ -> values.add("50Hz")
+                        CameraCharacteristics.CONTROL_AE_ANTIBANDING_MODE_60HZ -> values.add("60Hz")
+                    }
                 }
             }
-        } else if (CameraCharacteristics.CONTROL_AE_AVAILABLE_MODES == key) {
-            val modes = characteristics.get(key) as IntArray
-            modes.forEach {
-                when (it) {
-                    CameraCharacteristics.CONTROL_AE_MODE_OFF -> values.add("Off")
-                    CameraCharacteristics.CONTROL_AE_MODE_ON -> values.add("On")
-                    CameraCharacteristics.CONTROL_AE_MODE_ON_ALWAYS_FLASH -> values.add("Always Flash")
-                    CameraCharacteristics.CONTROL_AE_MODE_ON_AUTO_FLASH -> values.add("Auto Flash")
-                    CameraCharacteristics.CONTROL_AE_MODE_ON_AUTO_FLASH_REDEYE -> values.add("Auto Flash Redeye")
+            CameraCharacteristics.CONTROL_AE_AVAILABLE_MODES -> {
+                val modes = characteristics.get(key) as IntArray
+                modes.forEach {
+                    when (it) {
+                        CameraCharacteristics.CONTROL_AE_MODE_OFF -> values.add("Off")
+                        CameraCharacteristics.CONTROL_AE_MODE_ON -> values.add("On")
+                        CameraCharacteristics.CONTROL_AE_MODE_ON_ALWAYS_FLASH -> values.add("Always Flash")
+                        CameraCharacteristics.CONTROL_AE_MODE_ON_AUTO_FLASH -> values.add("Auto Flash")
+                        CameraCharacteristics.CONTROL_AE_MODE_ON_AUTO_FLASH_REDEYE -> values.add("Auto Flash Redeye")
+                    }
                 }
             }
-        } else if (CameraCharacteristics.CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES == key) {
-            val ranges = characteristics.get(key) as Array<Range<Int>>
-            ranges.forEach {
-                values.add(getRangeValue(it))
+            CameraCharacteristics.CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES -> {
+                val ranges = characteristics.get(key) as Array<Range<Int>>
+                ranges.forEach {
+                    values.add(getRangeValue(it))
+                }
             }
-
-        } else if (CameraCharacteristics.CONTROL_AE_COMPENSATION_RANGE == key) {
-            val range = characteristics.get(key) as Range<Int>
-            values.add(getRangeValue(range))
-        } else if (CameraCharacteristics.CONTROL_AE_COMPENSATION_STEP == key) {
-            val step = characteristics.get(key) as Rational
-            values.add(step.toString())
-        }/* else if (CameraCharacteristics.CONTROL_AE_LOCK_AVAILABLE == key) { // TODO requires >23
+            CameraCharacteristics.CONTROL_AE_COMPENSATION_RANGE -> {
+                val range = characteristics.get(key) as Range<Int>
+                values.add(getRangeValue(range))
+            }
+            CameraCharacteristics.CONTROL_AE_COMPENSATION_STEP -> {
+                val step = characteristics.get(key) as Rational
+                values.add(step.toString())
+            }/* else if (CameraCharacteristics.CONTROL_AE_LOCK_AVAILABLE == key) { // TODO requires >23
             val available = characteristics.get(key)
             values.add(available.toString())
-        } */ else if (CameraCharacteristics.CONTROL_AF_AVAILABLE_MODES == key) {
-            val modes = characteristics.get(key) as IntArray
-            modes.forEach {
-                when (it) {
-                    CameraCharacteristics.CONTROL_AF_MODE_OFF -> values.add("Off")
-                    CameraCharacteristics.CONTROL_AF_MODE_AUTO -> values.add("Auto")
-                    CameraCharacteristics.CONTROL_AF_MODE_EDOF -> values.add("EDOF")
-                    CameraCharacteristics.CONTROL_AF_MODE_MACRO -> values.add("Macro")
-                    CameraCharacteristics.CONTROL_AF_MODE_CONTINUOUS_PICTURE -> values.add("Continous Picture")
-                    CameraCharacteristics.CONTROL_AF_MODE_CONTINUOUS_VIDEO -> values.add("Continous Video")
+        } */
+            CameraCharacteristics.CONTROL_AF_AVAILABLE_MODES -> {
+                val modes = characteristics.get(key) as IntArray
+                modes.forEach {
+                    when (it) {
+                        CameraCharacteristics.CONTROL_AF_MODE_OFF -> values.add("Off")
+                        CameraCharacteristics.CONTROL_AF_MODE_AUTO -> values.add("Auto")
+                        CameraCharacteristics.CONTROL_AF_MODE_EDOF -> values.add("EDOF")
+                        CameraCharacteristics.CONTROL_AF_MODE_MACRO -> values.add("Macro")
+                        CameraCharacteristics.CONTROL_AF_MODE_CONTINUOUS_PICTURE -> values.add("Continous Picture")
+                        CameraCharacteristics.CONTROL_AF_MODE_CONTINUOUS_VIDEO -> values.add("Continous Video")
+                    }
                 }
             }
-        } else if (CameraCharacteristics.CONTROL_AVAILABLE_EFFECTS == key) {
-            val effects = characteristics.get(key) as IntArray
-            effects.forEach {
-                values.add(when (it) {
-                    CameraCharacteristics.CONTROL_EFFECT_MODE_OFF -> "Off"
-                    CameraCharacteristics.CONTROL_EFFECT_MODE_AQUA -> "Aqua"
-                    CameraCharacteristics.CONTROL_EFFECT_MODE_BLACKBOARD -> "Blackboard"
-                    CameraCharacteristics.CONTROL_EFFECT_MODE_MONO -> "Mono"
-                    CameraCharacteristics.CONTROL_EFFECT_MODE_NEGATIVE -> "Negative"
-                    CameraCharacteristics.CONTROL_EFFECT_MODE_POSTERIZE -> "Posterize"
-                    CameraCharacteristics.CONTROL_EFFECT_MODE_SEPIA -> "Sepia"
-                    CameraCharacteristics.CONTROL_EFFECT_MODE_SOLARIZE -> "Solarize"
-                    CameraCharacteristics.CONTROL_EFFECT_MODE_WHITEBOARD -> "Whiteboard"
-                    else -> {
-                        "Unkownn ${it}"
-                    }
-                })
-            }
-        } /*else if (CameraCharacteristics.CONTROL_AVAILABLE_MODES == key) {
+            CameraCharacteristics.CONTROL_AVAILABLE_EFFECTS -> {
+                val effects = characteristics.get(key) as IntArray
+                effects.forEach {
+                    values.add(when (it) {
+                        CameraCharacteristics.CONTROL_EFFECT_MODE_OFF -> "Off"
+                        CameraCharacteristics.CONTROL_EFFECT_MODE_AQUA -> "Aqua"
+                        CameraCharacteristics.CONTROL_EFFECT_MODE_BLACKBOARD -> "Blackboard"
+                        CameraCharacteristics.CONTROL_EFFECT_MODE_MONO -> "Mono"
+                        CameraCharacteristics.CONTROL_EFFECT_MODE_NEGATIVE -> "Negative"
+                        CameraCharacteristics.CONTROL_EFFECT_MODE_POSTERIZE -> "Posterize"
+                        CameraCharacteristics.CONTROL_EFFECT_MODE_SEPIA -> "Sepia"
+                        CameraCharacteristics.CONTROL_EFFECT_MODE_SOLARIZE -> "Solarize"
+                        CameraCharacteristics.CONTROL_EFFECT_MODE_WHITEBOARD -> "Whiteboard"
+                        else -> {
+                            "Unkownn ${it}"
+                        }
+                    })
+                }
+            } /*else if (CameraCharacteristics.CONTROL_AVAILABLE_MODES == key) {
             val modes = characteristics.get(key) as IntArray
             modes.forEach {
                 values.add(when (it) {
@@ -296,94 +308,113 @@ class CameraFragment : BaseFragment(), View.OnClickListener {
                     }
                 })
             }
-        }*/ else if (CameraCharacteristics.CONTROL_AVAILABLE_SCENE_MODES == key) {
-            val modes = characteristics.get(key) as IntArray
-            modes.forEach {
-                values.add(when (it) {
-                    CameraCharacteristics.CONTROL_SCENE_MODE_DISABLED -> "Disabled"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_ACTION -> "Action"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_BARCODE -> "Barcode"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_BEACH -> "Beach"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_CANDLELIGHT -> "Candlelight"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_FACE_PRIORITY -> "Face Priority"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_FIREWORKS -> "Fireworks"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_HDR -> "HDR"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_LANDSCAPE -> "Landscape"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_NIGHT -> "Night"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_NIGHT_PORTRAIT -> "Night Portrait"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_PARTY -> "Party"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_PORTRAIT -> "Portrait"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_SNOW -> "Snow"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_SPORTS -> "Sports"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_STEADYPHOTO -> "Steady Photo"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_SUNSET -> "Sunset"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_THEATRE -> "Theatre"
-                    CameraCharacteristics.CONTROL_SCENE_MODE_HIGH_SPEED_VIDEO -> "High Speed Video"
-                    else -> {
-                        "Unkownn ${it}"
-                    }
-                })
+        }*/
+            CameraCharacteristics.CONTROL_AVAILABLE_SCENE_MODES -> {
+                val modes = characteristics.get(key) as IntArray
+                modes.forEach {
+                    values.add(when (it) {
+                        CameraCharacteristics.CONTROL_SCENE_MODE_DISABLED -> "Disabled"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_ACTION -> "Action"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_BARCODE -> "Barcode"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_BEACH -> "Beach"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_CANDLELIGHT -> "Candlelight"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_FACE_PRIORITY -> "Face Priority"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_FIREWORKS -> "Fireworks"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_HDR -> "HDR"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_LANDSCAPE -> "Landscape"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_NIGHT -> "Night"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_NIGHT_PORTRAIT -> "Night Portrait"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_PARTY -> "Party"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_PORTRAIT -> "Portrait"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_SNOW -> "Snow"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_SPORTS -> "Sports"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_STEADYPHOTO -> "Steady Photo"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_SUNSET -> "Sunset"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_THEATRE -> "Theatre"
+                        CameraCharacteristics.CONTROL_SCENE_MODE_HIGH_SPEED_VIDEO -> "High Speed Video"
+                        else -> {
+                            "Unkownn ${it}"
+                        }
+                    })
+                }
             }
-        } else if (CameraCharacteristics.CONTROL_AVAILABLE_VIDEO_STABILIZATION_MODES == key) {
-            val modes = characteristics.get(key) as IntArray
-            modes.forEach {
-                values.add(when (it) {
-                    CameraCharacteristics.CONTROL_VIDEO_STABILIZATION_MODE_ON -> "On"
-                    CameraCharacteristics.CONTROL_VIDEO_STABILIZATION_MODE_OFF -> "Off"
-                    else -> {
-                        "Unkownn ${it}"
-                    }
-                })
+            CameraCharacteristics.CONTROL_AVAILABLE_VIDEO_STABILIZATION_MODES -> {
+                val modes = characteristics.get(key) as IntArray
+                modes.forEach {
+                    values.add(when (it) {
+                        CameraCharacteristics.CONTROL_VIDEO_STABILIZATION_MODE_ON -> "On"
+                        CameraCharacteristics.CONTROL_VIDEO_STABILIZATION_MODE_OFF -> "Off"
+                        else -> {
+                            "Unkownn ${it}"
+                        }
+                    })
+                }
             }
-        } else if (CameraCharacteristics.CONTROL_AWB_AVAILABLE_MODES == key) {
+            CameraCharacteristics.CONTROL_AWB_AVAILABLE_MODES -> {
 
-        } /*else if (CameraCharacteristics.CONTROL_AWB_LOCK_AVAILABLE == key) {
+            } /*else if (CameraCharacteristics.CONTROL_AWB_LOCK_AVAILABLE == key) {
 
-        } */ else if (CameraCharacteristics.CONTROL_MAX_REGIONS_AE == key) {
+        } */
+            CameraCharacteristics.CONTROL_MAX_REGIONS_AE -> {
 
-        } else if (CameraCharacteristics.CONTROL_MAX_REGIONS_AF == key) {
+            }
+            CameraCharacteristics.CONTROL_MAX_REGIONS_AF -> {
 
-        } else if (CameraCharacteristics.CONTROL_MAX_REGIONS_AWB == key) {
+            }
+            CameraCharacteristics.CONTROL_MAX_REGIONS_AWB -> {
 
-        } /*else if (CameraCharacteristics.CONTROL_POST_RAW_SENSITIVITY_BOOST_RANGE == key) {
+            } /*else if (CameraCharacteristics.CONTROL_POST_RAW_SENSITIVITY_BOOST_RANGE == key) {
 
         } else if (CameraCharacteristics.DEPTH_DEPTH_IS_EXCLUSIVE == key) {
 
-        }*/ else if (CameraCharacteristics.EDGE_AVAILABLE_EDGE_MODES == key) {
+        }*/
+            CameraCharacteristics.EDGE_AVAILABLE_EDGE_MODES -> {
 
-        } else if (CameraCharacteristics.FLASH_INFO_AVAILABLE == key) {
+            }
+            CameraCharacteristics.FLASH_INFO_AVAILABLE -> {
 
-        } else if (CameraCharacteristics.HOT_PIXEL_AVAILABLE_HOT_PIXEL_MODES == key) {
+            }
+            CameraCharacteristics.HOT_PIXEL_AVAILABLE_HOT_PIXEL_MODES -> {
 
-        } else if (CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL == key) {
+            }
+            CameraCharacteristics.INFO_SUPPORTED_HARDWARE_LEVEL -> {
 
-        } else if (CameraCharacteristics.JPEG_AVAILABLE_THUMBNAIL_SIZES == key) {
+            }
+            CameraCharacteristics.JPEG_AVAILABLE_THUMBNAIL_SIZES -> {
 
-        } else if (CameraCharacteristics.LENS_FACING == key) {
-            val facing = characteristics.get(key)
-            values.add(
-                    when (facing) {
-                        CameraCharacteristics.LENS_FACING_BACK -> "Back"
-                        CameraCharacteristics.LENS_FACING_FRONT -> "Front"
-                        CameraCharacteristics.LENS_FACING_EXTERNAL -> "External"
-                        else -> "Unkown"
-                    }
-            )
-        } else if (CameraCharacteristics.LENS_INFO_AVAILABLE_APERTURES == key) {
+            }
+            CameraCharacteristics.LENS_FACING -> {
+                val facing = characteristics.get(key)
+                values.add(
+                        when (facing) {
+                            CameraCharacteristics.LENS_FACING_BACK -> "Back"
+                            CameraCharacteristics.LENS_FACING_FRONT -> "Front"
+                            CameraCharacteristics.LENS_FACING_EXTERNAL -> "External"
+                            else -> "Unkown"
+                        }
+                )
+            }
+            CameraCharacteristics.LENS_INFO_AVAILABLE_APERTURES -> {
 
-        } else if (CameraCharacteristics.LENS_INFO_AVAILABLE_FILTER_DENSITIES == key) {
+            }
+            CameraCharacteristics.LENS_INFO_AVAILABLE_FILTER_DENSITIES -> {
 
-        } else if (CameraCharacteristics.LENS_INFO_AVAILABLE_FOCAL_LENGTHS == key) {
+            }
+            CameraCharacteristics.LENS_INFO_AVAILABLE_FOCAL_LENGTHS -> {
 
-        } else if (CameraCharacteristics.LENS_INFO_AVAILABLE_OPTICAL_STABILIZATION == key) {
+            }
+            CameraCharacteristics.LENS_INFO_AVAILABLE_OPTICAL_STABILIZATION -> {
 
-        } else if (CameraCharacteristics.LENS_INFO_FOCUS_DISTANCE_CALIBRATION == key) {
+            }
+            CameraCharacteristics.LENS_INFO_FOCUS_DISTANCE_CALIBRATION -> {
 
-        } else if (CameraCharacteristics.LENS_INFO_HYPERFOCAL_DISTANCE == key) {
+            }
+            CameraCharacteristics.LENS_INFO_HYPERFOCAL_DISTANCE -> {
 
-        } else if (CameraCharacteristics.LENS_INFO_MINIMUM_FOCUS_DISTANCE == key) {
+            }
+            CameraCharacteristics.LENS_INFO_MINIMUM_FOCUS_DISTANCE -> {
 
-        }/* else if (CameraCharacteristics.LENS_INTRINSIC_CALIBRATION == key) {
+            }/* else if (CameraCharacteristics.LENS_INTRINSIC_CALIBRATION == key) {
 
         } else if (CameraCharacteristics.LENS_POSE_ROTATION == key) {
 
@@ -395,103 +426,139 @@ class CameraFragment : BaseFragment(), View.OnClickListener {
 
         } *//*else if (CameraCharacteristics.REPROCESS_MAX_CAPTURE_STALL == key) {
 
-        } */ else if (CameraCharacteristics.REQUEST_AVAILABLE_CAPABILITIES == key) {
+        } */
+            CameraCharacteristics.REQUEST_AVAILABLE_CAPABILITIES -> {
 
-        } else if (CameraCharacteristics.REQUEST_MAX_NUM_INPUT_STREAMS == key) {
-
-        } else if (CameraCharacteristics.REQUEST_MAX_NUM_OUTPUT_PROC == key) {
-
-        } else if (CameraCharacteristics.REQUEST_MAX_NUM_OUTPUT_PROC_STALLING == key) {
-
-        } else if (CameraCharacteristics.REQUEST_MAX_NUM_OUTPUT_RAW == key) {
-
-        } else if (CameraCharacteristics.REQUEST_PARTIAL_RESULT_COUNT == key) {
-
-        } else if (CameraCharacteristics.REQUEST_PIPELINE_MAX_DEPTH == key) {
-
-        } else if (CameraCharacteristics.SCALER_AVAILABLE_MAX_DIGITAL_ZOOM == key) {
-
-        } else if (CameraCharacteristics.SCALER_CROPPING_TYPE == key) {
-
-        } else if (CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP == key) {
-            val map = characteristics.get(key) as StreamConfigurationMap
-            val outputFormats = map.outputFormats
-            outputFormats.forEach {
-                values.add(printOutputFormat(it, map))
             }
+            CameraCharacteristics.REQUEST_MAX_NUM_INPUT_STREAMS -> {
 
+            }
+            CameraCharacteristics.REQUEST_MAX_NUM_OUTPUT_PROC -> {
 
-        } else if (CameraCharacteristics.SENSOR_AVAILABLE_TEST_PATTERN_MODES == key) {
+            }
+            CameraCharacteristics.REQUEST_MAX_NUM_OUTPUT_PROC_STALLING -> {
 
-        } else if (CameraCharacteristics.SENSOR_BLACK_LEVEL_PATTERN == key) {
+            }
+            CameraCharacteristics.REQUEST_MAX_NUM_OUTPUT_RAW -> {
 
-        } else if (CameraCharacteristics.SENSOR_CALIBRATION_TRANSFORM1 == key) {
+            }
+            CameraCharacteristics.REQUEST_PARTIAL_RESULT_COUNT -> {
 
-        } else if (CameraCharacteristics.SENSOR_CALIBRATION_TRANSFORM2 == key) {
+            }
+            CameraCharacteristics.REQUEST_PIPELINE_MAX_DEPTH -> {
 
-        } else if (CameraCharacteristics.SENSOR_COLOR_TRANSFORM1 == key) {
+            }
+            CameraCharacteristics.SCALER_AVAILABLE_MAX_DIGITAL_ZOOM -> {
 
-        } else if (CameraCharacteristics.SENSOR_COLOR_TRANSFORM2 == key) {
+            }
+            CameraCharacteristics.SCALER_CROPPING_TYPE -> {
 
-        } else if (CameraCharacteristics.SENSOR_FORWARD_MATRIX1 == key) {
+            }
+            CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP -> {
+                val map = characteristics.get(key) as StreamConfigurationMap
+                val outputFormats = map.outputFormats
+                outputFormats.forEach {
+                    values.add(printOutputFormat(it, map))
+                }
+            }
+            CameraCharacteristics.SENSOR_AVAILABLE_TEST_PATTERN_MODES -> {
 
-        } else if (CameraCharacteristics.SENSOR_FORWARD_MATRIX2 == key) {
+            }
+            CameraCharacteristics.SENSOR_BLACK_LEVEL_PATTERN -> {
 
-        } else if (CameraCharacteristics.SENSOR_INFO_ACTIVE_ARRAY_SIZE == key) {
+            }
+            CameraCharacteristics.SENSOR_CALIBRATION_TRANSFORM1 -> {
 
-        } else if (CameraCharacteristics.SENSOR_INFO_COLOR_FILTER_ARRANGEMENT == key) {
+            }
+            CameraCharacteristics.SENSOR_CALIBRATION_TRANSFORM2 -> {
 
-        } else if (CameraCharacteristics.SENSOR_INFO_EXPOSURE_TIME_RANGE == key) {
+            }
+            CameraCharacteristics.SENSOR_COLOR_TRANSFORM1 -> {
 
-        } /*else if (CameraCharacteristics.SENSOR_INFO_LENS_SHADING_APPLIED == key) {
+            }
+            CameraCharacteristics.SENSOR_COLOR_TRANSFORM2 -> {
 
-        } */ else if (CameraCharacteristics.SENSOR_INFO_MAX_FRAME_DURATION == key) {
+            }
+            CameraCharacteristics.SENSOR_FORWARD_MATRIX1 -> {
 
-        } else if (CameraCharacteristics.SENSOR_INFO_PHYSICAL_SIZE == key) {
+            }
+            CameraCharacteristics.SENSOR_FORWARD_MATRIX2 -> {
 
-        } else if (CameraCharacteristics.SENSOR_INFO_PIXEL_ARRAY_SIZE == key) {
+            }
+            CameraCharacteristics.SENSOR_INFO_ACTIVE_ARRAY_SIZE -> {
 
-        } /*else if (CameraCharacteristics.SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE == key) {
+            }
+            CameraCharacteristics.SENSOR_INFO_COLOR_FILTER_ARRANGEMENT -> {
 
-        }*/ else if (CameraCharacteristics.SENSOR_INFO_SENSITIVITY_RANGE == key) {
+            }
+            CameraCharacteristics.SENSOR_INFO_EXPOSURE_TIME_RANGE -> {
 
-        } else if (CameraCharacteristics.SENSOR_INFO_TIMESTAMP_SOURCE == key) {
+            } /*else if (CameraCharacteristics.SENSOR_INFO_LENS_SHADING_APPLIED == key) {
 
-        } else if (CameraCharacteristics.SENSOR_INFO_WHITE_LEVEL == key) {
+        } */
+            CameraCharacteristics.SENSOR_INFO_MAX_FRAME_DURATION -> {
 
-        } else if (CameraCharacteristics.SENSOR_MAX_ANALOG_SENSITIVITY == key) {
+            }
+            CameraCharacteristics.SENSOR_INFO_PHYSICAL_SIZE -> {
 
-        } /*else if (CameraCharacteristics.SENSOR_OPTICAL_BLACK_REGIONS == key) {
+            }
+            CameraCharacteristics.SENSOR_INFO_PIXEL_ARRAY_SIZE -> {
 
-        }*/ else if (CameraCharacteristics.SENSOR_ORIENTATION == key) {
-            val orientation = characteristics.get(key) as Int
-            values.add(orientation.toString())
+            } /*else if (CameraCharacteristics.SENSOR_INFO_PRE_CORRECTION_ACTIVE_ARRAY_SIZE == key) {
 
-        } else if (CameraCharacteristics.SENSOR_REFERENCE_ILLUMINANT1 == key) {
+        }*/
+            CameraCharacteristics.SENSOR_INFO_SENSITIVITY_RANGE -> {
 
-        } else if (CameraCharacteristics.SENSOR_REFERENCE_ILLUMINANT2 == key) {
+            }
+            CameraCharacteristics.SENSOR_INFO_TIMESTAMP_SOURCE -> {
 
-        }/* else if (CameraCharacteristics.SHADING_AVAILABLE_MODES == key) {
+            }
+            CameraCharacteristics.SENSOR_INFO_WHITE_LEVEL -> {
 
-        }*/ else if (CameraCharacteristics.STATISTICS_INFO_AVAILABLE_FACE_DETECT_MODES == key) {
+            }
+            CameraCharacteristics.SENSOR_MAX_ANALOG_SENSITIVITY -> {
 
-        } else if (CameraCharacteristics.STATISTICS_INFO_AVAILABLE_HOT_PIXEL_MAP_MODES == key) {
+            } /*else if (CameraCharacteristics.SENSOR_OPTICAL_BLACK_REGIONS == key) {
 
-        }/* else if (CameraCharacteristics.STATISTICS_INFO_AVAILABLE_LENS_SHADING_MAP_MODES == key) {
+        }*/
+            CameraCharacteristics.SENSOR_ORIENTATION -> {
+                val orientation = characteristics.get(key) as Int
+                values.add(orientation.toString())
 
-        }*/ else if (CameraCharacteristics.SYNC_MAX_LATENCY == key) {
+            }
+            CameraCharacteristics.SENSOR_REFERENCE_ILLUMINANT1 -> {
 
-        } else if (CameraCharacteristics.TONEMAP_AVAILABLE_TONE_MAP_MODES == key) {
+            }
+            CameraCharacteristics.SENSOR_REFERENCE_ILLUMINANT2 -> {
 
-        } else if (CameraCharacteristics.TONEMAP_MAX_CURVE_POINTS == key) {
+            }/* else if (CameraCharacteristics.SHADING_AVAILABLE_MODES == key) {
 
+        }*/
+            CameraCharacteristics.STATISTICS_INFO_AVAILABLE_FACE_DETECT_MODES -> {
+
+            }
+            CameraCharacteristics.STATISTICS_INFO_AVAILABLE_HOT_PIXEL_MAP_MODES -> {
+
+            }/* else if (CameraCharacteristics.STATISTICS_INFO_AVAILABLE_LENS_SHADING_MAP_MODES == key) {
+
+        }*/
+            CameraCharacteristics.SYNC_MAX_LATENCY -> {
+
+            }
+            CameraCharacteristics.TONEMAP_AVAILABLE_TONE_MAP_MODES -> {
+
+            }
+            CameraCharacteristics.TONEMAP_MAX_CURVE_POINTS -> {
+
+            }
         }
-
-
         values.sort()
         return if (values.isEmpty()) "" else join(", ", values)
     }
 
+    /**
+     * 打印输出格式
+     */
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
     private fun printOutputFormat(outputFormat: Int, map: StreamConfigurationMap): String {
         val formatName = getImageFormat(outputFormat)
@@ -501,9 +568,7 @@ class CameraFragment : BaseFragment(), View.OnClickListener {
             val mp = getMegaPixel(it)
             outputSizeValues.add("${it.width}x${it.height} (${mp}MP)")
         }
-
         val sizesString = join(", ", outputSizeValues)
-
         return "\n$formatName -> [$sizesString]"
     }
 
@@ -513,6 +578,9 @@ class CameraFragment : BaseFragment(), View.OnClickListener {
         return String.format("%.1f", mp)
     }
 
+    /**
+     * 获取图片格式
+     */
     private fun getImageFormat(format: Int): String {
         return when (format) {
             ImageFormat.DEPTH16 -> "DEPTH16"
@@ -546,18 +614,15 @@ class CameraFragment : BaseFragment(), View.OnClickListener {
         if (null == elements || elements.isEmpty()) {
             return ""
         }
-
         val sb = StringBuilder()
         val iter = elements.iterator()
         while (iter.hasNext()) {
             val element = iter.next()
             sb.append(element.toString())
-
             if (iter.hasNext()) {
                 sb.append(delimiter)
             }
         }
-
         return sb.toString()
     }
 }

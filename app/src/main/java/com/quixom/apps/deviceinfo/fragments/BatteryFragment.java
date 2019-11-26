@@ -76,6 +76,7 @@ public class BatteryFragment extends BaseFragment {
     int deviceStatus;
 
     private BroadcastReceiver mBatLow = new BroadcastReceiver() {
+
         @Override
         public void onReceive(Context context, Intent intent) {
             fabBatteryCharging.setImageResource(R.drawable.ic_low_battery);
@@ -83,6 +84,7 @@ public class BatteryFragment extends BaseFragment {
     };
 
     private BroadcastReceiver mBatInfoReceiver = new BroadcastReceiver() {
+
         @Override
         public void onReceive(Context c, Intent intent) {
 
@@ -121,10 +123,10 @@ public class BatteryFragment extends BaseFragment {
        /* View view = inflater.inflate(R.layout.fragment_battery, container, false);
         unbinder = ButterKnife.bind(this, view);
 */
-
         final Context contextThemeWrapper = new ContextThemeWrapper(getActivity(), R.style.BatteryTheme);
         LayoutInflater localInflater = inflater.cloneInContext(contextThemeWrapper);
         View view = localInflater.inflate(R.layout.fragment_battery, container, false);
+
         unbinder = ButterKnife.bind(this, view);
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             Window window = getActivity().getWindow();

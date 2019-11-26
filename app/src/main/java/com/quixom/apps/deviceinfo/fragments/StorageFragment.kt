@@ -39,7 +39,6 @@ class StorageFragment : BaseFragment() {
     private var llExtMemory: LinearLayout? = null
     private val df = DecimalFormat("#")
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 //        val view = inflater.inflate(R.layout.fragment_storage, container, false)
 
@@ -52,7 +51,6 @@ class StorageFragment : BaseFragment() {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
             window.statusBarColor = resources.getColor(R.color.dark_red)
             window.navigationBarColor = resources.getColor(R.color.dark_red)
-
         }
 
         ivMenu = view.findViewById(R.id.iv_menu)
@@ -83,8 +81,6 @@ class StorageFragment : BaseFragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initToolbar()
-
-
         // Init
         val handler = Handler()
         val runnable = object : Runnable {
@@ -94,10 +90,8 @@ class StorageFragment : BaseFragment() {
                 handler.postDelayed(this, 1000)
             }
         }
-
         handler.postDelayed(runnable, 0)
         setUpStorageDetails()
-
     }
 
     override fun onHiddenChanged(hidden: Boolean) {
@@ -119,15 +113,14 @@ class StorageFragment : BaseFragment() {
     @TargetApi(Build.VERSION_CODES.JELLY_BEAN_MR2)
     @SuppressLint("SetTextI18n")
     private fun setUpStorageDetails() {
-
         /** Internal Memory usage */
         val totalInternalValue = getTotalInternalMemorySize()
         val freeInternalValue = getAvailableInternalMemorySize()
         val usedInternalValue = totalInternalValue - freeInternalValue
+
         tvUsedIntMemory?.text = mResources.getString(R.string.used_memory) + "\t" + formatSize(usedInternalValue)
         tvFreeIntMemory?.text = mResources.getString(R.string.free) + "\t" + formatSize(freeInternalValue)
         tvTotalIntMemory?.text = mResources.getString(R.string.total) + "\t" + formatSize(totalInternalValue)
-
         donutInternalStorage?.progress = Methods.calculatePercentage(usedInternalValue.toDouble(), totalInternalValue.toDouble()).toFloat()
 
         if (Methods.getExternalMounts().size > 0) {
@@ -140,7 +133,6 @@ class StorageFragment : BaseFragment() {
             tvUsedExtMemory?.text = mResources.getString(R.string.used_memory) + "\t" + formatSize(usedExternalValue)
             tvFreeExtMemory?.text = mResources.getString(R.string.free) + "\t" + formatSize(freeExternalValue)
             tvTotalExtMemory?.text = mResources.getString(R.string.used) + "\t" + formatSize(totalExternalValue)
-
             donutExternalStorage?.progress = df.format(Methods.calculatePercentage(usedExternalValue.toDouble(), totalExternalValue.toDouble())).toFloat()
         } else {
             llExtMemory?.visibility = View.GONE
@@ -165,7 +157,6 @@ class StorageFragment : BaseFragment() {
         val mi = ActivityManager.MemoryInfo()
         val activityManager = mActivity.getSystemService(Context.ACTIVITY_SERVICE) as ActivityManager
         activityManager.getMemoryInfo(mi)
-
         return mi.availMem
     }
 

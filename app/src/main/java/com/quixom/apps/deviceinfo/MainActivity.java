@@ -155,14 +155,11 @@ public class MainActivity extends BaseActivity {
         drawerlistener();
         tvDeviceName.setText("".concat(Build.BRAND));
         tvModelNumber.setText("".concat(Build.MODEL));
-
         //Setting Navigation View Item Selected Listener to handle the item click of the navigation menu
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
-
             // This method will trigger on item Click of navigation menu
             @Override
             public boolean onNavigationItemSelected(MenuItem menuItem) {
-
                 //Check to see which item was being clicked and perform appropriate action
                 switch (menuItem.getItemId()) {
                     //Replacing the main content with ContentFragment Which is our Inbox View;
@@ -237,8 +234,9 @@ public class MainActivity extends BaseActivity {
                 return true;
             }
         });
-
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+        // ActionBarDrawerToggle
+        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout,
+                R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
     }
@@ -253,13 +251,12 @@ public class MainActivity extends BaseActivity {
                 @SuppressLint("NewApi")
                 @Override
                 public void onDrawerSlide(View drawerView, float slideOffset) {
-                    //super.onDrawerSlide(drawerView, slideOffset);
-
+                    // super.onDrawerSlide(drawerView, slideOffset);
                     try {
                         float moveFactor = (drawerLayout.getWidth() * slideOffset);
                         int width = findViewById(R.id.navigationView).getWidth();
-
                         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB) {
+                            //
                         } else {
                             TranslateAnimation anim = new TranslateAnimation(0f, moveFactor, 0f, 0f);
                             anim.setDuration(0);
@@ -284,11 +281,9 @@ public class MainActivity extends BaseActivity {
                 public void onDrawerStateChanged(int newState) {
 
                 }
-
             });
         } catch (Exception e) {
             e.printStackTrace();
-
         }
     }
 
@@ -306,7 +301,6 @@ public class MainActivity extends BaseActivity {
     public void loadHomeFragment() {
         // selecting appropriate nav menu item
         selectNavMenu();
-
         // if user select the current navigation menu again, don't do anything
         // just close the navigation drawer
         if (lastSelectedPosition == navItemIndex) {
@@ -315,10 +309,8 @@ public class MainActivity extends BaseActivity {
         }
 
         lastSelectedPosition = navItemIndex;
-
         //Closing drawer on item click
         drawerLayout.closeDrawers();
-
         // Sometimes, when fragment has huge data, screen seems hanging
         // when switching between navigation menus
         // So using runnable, the fragment is loaded with cross fade effect
@@ -326,6 +318,7 @@ public class MainActivity extends BaseActivity {
         mHandler.postDelayed(new Runnable() {
             @Override
             public void run() {
+                //
                 Fragment fragment = getFragmentFromDrawer();
                 if (fragment != null) {
                     fragmentUtil.clearBackStackFragmets();
@@ -333,7 +326,6 @@ public class MainActivity extends BaseActivity {
                 }
             }
         }, 300);
-
         // refresh toolbar menu
         invalidateOptionsMenu();
     }

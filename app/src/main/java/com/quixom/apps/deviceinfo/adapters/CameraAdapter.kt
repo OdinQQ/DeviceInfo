@@ -15,25 +15,22 @@ import com.quixom.apps.deviceinfo.models.FeaturesHW
 
 class CameraAdapter(internal var appslist: ArrayList<FeaturesHW>, internal var mActivity: MainActivity) : RecyclerView.Adapter<CameraAdapter.DeviceVH>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): CameraAdapter.DeviceVH {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CameraAdapter.DeviceVH {
         val itemView = LayoutInflater.from(mActivity).inflate(R.layout.row_camera_item, parent, false)
         return DeviceVH(itemView)
     }
 
-    override fun onBindViewHolder(holder: CameraAdapter.DeviceVH?, position: Int) {
+    override fun onBindViewHolder(holder: CameraAdapter.DeviceVH, position: Int) {
         holder?.bindData(appslist[position])
         println("appList = " + appslist.size)
     }
 
     override fun getItemCount(): Int = appslist.size
 
-
     inner class DeviceVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bindData(featureHW: FeaturesHW) {
-
             val tvFeatureName: TextView = itemView.findViewById(R.id.tv_camera_feature_name)
             val tvFeatureValue: TextView = itemView.findViewById(R.id.tv_camera_feature_value)
-
             tvFeatureName.text = featureHW.featureLable
             tvFeatureValue.text = featureHW.featureValue
         }

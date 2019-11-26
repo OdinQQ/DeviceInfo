@@ -22,10 +22,12 @@ abstract class BatteryTimeService: Service() {
      */
     private var batteryDischargingTimes: ArrayList<Long>? = null
     private var batteryChargingTimes:ArrayList<Long>? = null
+
     /**
      * A broadcast receiver for tracking the level changes and the battery usage.
      */
     private val levelReceiver = object : BroadcastReceiver() {
+
         internal var oldDischargeLevel = 101
         internal var oldChargeLevel = 0
         internal var oldDischargeTime: Long = 0
@@ -36,11 +38,9 @@ abstract class BatteryTimeService: Service() {
             val batteryStats = BatteryStats(intent)
             val charging = batteryStats.isCharging()
             val level = batteryStats.getLevel()
-
+            //
             if (!charging && level <= 100) {
-
                 if (level < oldDischargeLevel) {
-
                     val time = System.currentTimeMillis()
                     if (oldDischargeTime != 0L) {
                         val diffTime = time - oldDischargeTime
@@ -52,17 +52,13 @@ abstract class BatteryTimeService: Service() {
                     oldDischargeTime = time
                     oldDischargeLevel = level
                 }
-
                 batteryChargingTimes!!.clear()
                 oldChargeLevel = 0
                 oldChargeTime = 0
-
             }
-
+            //
             if (charging) {
-
                 if (oldChargeLevel < level) {
-
                     val time = System.currentTimeMillis()
                     if (oldChargeTime != 0L) {
                         val diffTime = time - oldChargeTime
@@ -73,20 +69,17 @@ abstract class BatteryTimeService: Service() {
                     }
                     oldChargeTime = time
                     oldChargeLevel = level
-
                 }
-
                 if (level == 100) {
                     onFullBattery()
                 }
-
                 batteryDischargingTimes!!.clear()
                 oldDischargeLevel = 100
                 oldDischargeTime = 0
-
             }
 
         }
+
     }
 
     /**
@@ -124,12 +117,10 @@ abstract class BatteryTimeService: Service() {
      */
     override fun onCreate() {
         super.onCreate()
-
         batteryDischargingTimes = ArrayList()
         batteryChargingTimes = ArrayList()
-
+        //
         registerReceiver(levelReceiver, IntentFilter(Intent.ACTION_BATTERY_CHANGED))
-
     }
 
     /**
@@ -140,9 +131,7 @@ abstract class BatteryTimeService: Service() {
         val average: Long
         var sum: Long = 0
         for (time in batteryChargingTimes!!) {
-
             sum += time!!
-
         }
         average = sum / batteryChargingTimes!!.size * (100 - level)
 
@@ -152,29 +141,22 @@ abstract class BatteryTimeService: Service() {
         val mins = (TimeUnit.MILLISECONDS.toMinutes(average) % TimeUnit.HOURS.toMinutes(1)) as Int
 
         onChargingTimePublish(hours, mins)
-
     }
 
     /**
      * Method to calculate the discharging time based on the timely usage.
      */
     private fun publishDischargingText(level: Int) {
-
         val average: Long
         var sum: Long = 0
         for (time in batteryDischargingTimes!!) {
-
             sum += time
-
         }
         average = sum / batteryDischargingTimes!!.size * level
-
         val days = TimeUnit.MILLISECONDS.toDays(average) as Int
         val hours = (TimeUnit.MILLISECONDS.toHours(average) % TimeUnit.DAYS.toHours(1)) as Int
         val mins = (TimeUnit.MILLISECONDS.toMinutes(average) % TimeUnit.HOURS.toMinutes(1)) as Int
-
         onDischargeTimePublish(days, hours, mins)
-
     }
 
     /**

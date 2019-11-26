@@ -11,8 +11,10 @@ import com.quixom.apps.deviceinfo.MainActivity
  * Created by akif on 10/13/17.
  */
 class RateUsApp {
-    @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+
     companion object {
+
+        @TargetApi(Build.VERSION_CODES.LOLLIPOP)
         fun rateUsApp(mActivity: MainActivity) {
             val uri = Uri.parse("market://details?id=com.quixom.deviceinfo")
             val goToMarket = Intent(Intent.ACTION_VIEW, uri)

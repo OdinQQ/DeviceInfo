@@ -5,6 +5,9 @@ import android.widget.EditText;
 
 import java.util.regex.Pattern;
 
+/**
+ * 校验
+ */
 public class Validation {
 
     // Regular Expression
@@ -12,7 +15,6 @@ public class Validation {
     private static final String EMAIL_REGEX = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
     private static final String PHONE_REGEX = "\\d{3}-\\d{7}";
     private static final String EMAIL_PATTERN = "^[_A-Za-z0-9-\\+]+(\\.[_A-Za-z0-9-]+)*@" + "[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
-
 
     // Error Messages
     private static final String REQUIRED_MSG = "required";
@@ -29,7 +31,14 @@ public class Validation {
         return isValid(editText, PHONE_REGEX, PHONE_MSG, required);
     }
 
-    // return true if the input field is valid, based on the parameter passed
+    /**
+     * return true if the input field is valid, based on the parameter passed
+     * @param editText
+     * @param regex
+     * @param errMsg
+     * @param required
+     * @return
+     */
     public static boolean isValid(EditText editText, String regex, String errMsg, boolean required) {
 
         String text = editText.getText().toString().trim();
@@ -44,8 +53,6 @@ public class Validation {
             editText.setError(errMsg);
             return false;
         }
-        ;
-
         return true;
     }
 
@@ -65,7 +72,6 @@ public class Validation {
         return true;
     }
 
-
     public static boolean isRequiredField(String strText) {
         return strText != null && !strText.trim().isEmpty();
     }
@@ -80,7 +86,6 @@ public class Validation {
             }
         }
         return 0;
-
     }
 
     public static double getDoubleFromString(String strText) {
@@ -93,9 +98,7 @@ public class Validation {
             }
         }
         return 0;
-
     }
-
 
     public static boolean isEmail(String strEmailAddress) {
         return Pattern.compile(EMAIL_PATTERN).matcher(strEmailAddress).matches();
@@ -133,7 +136,6 @@ public class Validation {
     public static boolean isPhoneNo(String phoneNo) {
         return Patterns.PHONE.matcher(phoneNo).matches();
     }
-
 
     public static String removeLastChar(String str) {
         return str.substring(0, str.length() - 1);

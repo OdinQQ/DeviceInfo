@@ -19,12 +19,12 @@ import com.quixom.apps.deviceinfo.utilities.Methods
 
 class DeviceAdapter(internal var flag: Int?, internal var appslist: ArrayList<DeviceInfo>, internal var mActivity: MainActivity) : RecyclerView.Adapter<DeviceAdapter.DeviceVH>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): DeviceAdapter.DeviceVH {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): DeviceAdapter.DeviceVH {
         val itemView = LayoutInflater.from(mActivity).inflate(R.layout.row_infomation, parent, false)
         return DeviceVH(itemView)
     }
 
-    override fun onBindViewHolder(holder: DeviceAdapter.DeviceVH?, position: Int) {
+    override fun onBindViewHolder(holder: DeviceAdapter.DeviceVH, position: Int) {
         holder?.bindData(appslist[position])
     }
 

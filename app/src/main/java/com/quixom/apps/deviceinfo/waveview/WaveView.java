@@ -15,6 +15,7 @@ import com.quixom.apps.deviceinfo.R;
  * Created by John on 2014/10/15.
  */
 public class WaveView extends LinearLayout {
+
     protected static final int LARGE = 1;
     protected static final int MIDDLE = 2;
     protected static final int LITTLE = 3;
@@ -81,6 +82,7 @@ public class WaveView extends LinearLayout {
         mWaveToTop = (int) (getHeight() * (1f - mProgress / 100f));
         ViewGroup.LayoutParams params = mWave.getLayoutParams();
         if (params != null) {
+            // 上间距
             ((LayoutParams) params).topMargin = mWaveToTop;
         }
         mWave.setLayoutParams(params);
@@ -98,13 +100,14 @@ public class WaveView extends LinearLayout {
     @Override
     public void onRestoreInstanceState(Parcelable state) {
         SavedState ss = (SavedState) state;
+        // Force our ancestor class to restore its state
         super.onRestoreInstanceState(ss.getSuperState());
         setProgress(ss.progress);
     }
 
     private static class SavedState extends BaseSavedState {
-        int progress;
 
+        int progress;
         /**
          * Constructor called from {@link android.widget.ProgressBar#onSaveInstanceState()}
          */

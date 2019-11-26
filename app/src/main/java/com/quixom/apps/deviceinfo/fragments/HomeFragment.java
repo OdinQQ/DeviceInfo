@@ -84,7 +84,6 @@ public class HomeFragment extends BaseFragment {
             window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
             window.setStatusBarColor(getResources().getColor(R.color.colorPrimaryDark));
             window.setNavigationBarColor(getResources().getColor(R.color.colorPrimaryDark));
-
         }
         return view;
     }

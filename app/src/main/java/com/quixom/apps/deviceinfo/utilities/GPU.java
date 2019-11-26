@@ -25,7 +25,6 @@ import javax.microedition.khronos.opengles.GL10;
 public class GPU {
 
         // region OpenGLGles10
-
         public static class OpenGLGles10Info extends OpenGLInfo {
 
             // general

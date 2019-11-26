@@ -35,7 +35,6 @@ class SimFragment : BaseFragment() {
    /* override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? =
             inflater.inflate(R.layout.fragment_sim, container, false)*/
 
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val contextThemeWrapper = ContextThemeWrapper(activity, R.style.SimTheme)
         val localInflater = inflater.cloneInContext(contextThemeWrapper)
@@ -109,7 +108,6 @@ class SimFragment : BaseFragment() {
 
     @TargetApi(Build.VERSION_CODES.O)
     @SuppressLint("MissingPermission", "HardwareIds")
-
     private fun retrieveSimInformation(telephonyManager: TelephonyManager) {
         if (telephonyManager != null && isSimAvailable(mActivity, 0) && telephonyManager.simState == TelephonyManager.SIM_STATE_READY) {
 
@@ -186,7 +184,6 @@ class SimFragment : BaseFragment() {
             throw DIMethodNotFoundException(predictedMethodName)
         }
     }
-
 
     @Throws(DIMethodNotFoundException::class)
     private fun getCellLocBySlot(context: Context, predictedMethodName: String, slotID: Int): GsmCellLocation? {
